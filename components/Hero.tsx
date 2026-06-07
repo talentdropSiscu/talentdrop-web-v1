@@ -1,12 +1,3 @@
-const flow = [
-  ["01", "Talent", "El atleta. El origen."],
-  ["02", "Passport", "Registro deportivo digital."],
-  ["03", "Evidence", "Datos verificados."],
-  ["04", "Readiness", "Estado y disponibilidad."],
-  ["05", "Certificate", "Validación firmada."],
-  ["06", "Decision", "Decisión trazable."],
-];
-
 export default function Hero() {
   return (
     <section className="mx-auto grid max-w-7xl gap-14 px-6 py-24 lg:grid-cols-[1.05fr_0.95fr] lg:py-32">
@@ -29,8 +20,8 @@ export default function Hero() {
         </p>
 
         <p className="mt-5 max-w-2xl rounded-2xl border border-slate-200 bg-slate-50 p-5 text-base font-semibold text-slate-700">
-          TalentDrop es una Sports Decision Infrastructure construida sobre
-          un Talent Passport propiedad del deportista.
+          TalentDrop es una Sports Decision Infrastructure construida sobre un
+          Talent Passport propiedad del deportista.
         </p>
 
         <div className="mt-9 flex flex-col gap-4 sm:flex-row">
@@ -50,27 +41,50 @@ export default function Hero() {
         </div>
       </div>
 
-      <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-6 shadow-sm">
-        <p className="mb-6 text-sm font-black uppercase tracking-[0.18em] text-blue-700">
-          Cómo fluye la información
-        </p>
+      <div className="rounded-[2rem] border border-slate-200 bg-slate-50 p-8 shadow-sm">
+        <div className="mb-6 flex items-center justify-between">
+          <div>
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-blue-700">
+              Digital Talent Passport
+            </p>
 
-        <div className="space-y-3">
-          {flow.map(([num, title, text]) => (
-            <div
-              key={num}
-              className="flex items-center gap-4 rounded-2xl border border-slate-200 bg-white p-4"
-            >
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-700 text-sm font-black text-white">
-                {num}
-              </div>
+            <h3 className="mt-2 text-2xl font-black text-slate-950">
+              Athlete Profile
+            </h3>
+          </div>
 
-              <div>
-                <p className="font-black text-slate-950">{title}</p>
-                <p className="text-sm text-slate-500">{text}</p>
-              </div>
-            </div>
-          ))}
+          <div className="rounded-full bg-green-100 px-3 py-1 text-xs font-black text-green-700">
+            ACTIVE
+          </div>
+        </div>
+
+        <div className="space-y-4">
+          <div className="rounded-2xl border border-slate-200 bg-white p-5">
+            <p className="text-sm text-slate-500">Talent Passport</p>
+            <p className="mt-1 font-black text-slate-950">Complete</p>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 bg-white p-5">
+            <p className="text-sm text-slate-500">Evidence Layer</p>
+            <p className="mt-1 font-black text-slate-950">
+              24 verified evidences
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 bg-white p-5">
+            <p className="text-sm text-slate-500">Readiness</p>
+            <p className="mt-1 font-black text-blue-700">82 / 100</p>
+          </div>
+
+          <div className="rounded-2xl border border-slate-200 bg-white p-5">
+            <p className="text-sm text-slate-500">Certificate</p>
+            <p className="mt-1 font-black text-slate-950">Available</p>
+          </div>
+
+          <div className="rounded-2xl bg-slate-950 p-5 text-white">
+            <p className="text-sm text-slate-400">Decision Status</p>
+            <p className="mt-1 text-xl font-black">Ready for Decision</p>
+          </div>
         </div>
       </div>
     </section>
