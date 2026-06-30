@@ -78,20 +78,76 @@ export function ButtonRow({ primary = "Solicitar demo", secondary = "Ver Core OS
   );
 }
 
+function FlowIcon({ type }: { type: string }) {
+  if (type === "info") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <ellipse cx="12" cy="5" rx="7" ry="3" />
+        <path d="M5 5v6c0 1.7 3.1 3 7 3s7-1.3 7-3V5" />
+        <path d="M5 11v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6" />
+      </svg>
+    );
+  }
+
+  if (type === "evidence") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <circle cx="6" cy="12" r="3" />
+        <circle cx="18" cy="5" r="3" />
+        <circle cx="18" cy="19" r="3" />
+        <path d="M8.7 10.7 15.3 6.3" />
+        <path d="M8.7 13.3 15.3 17.7" />
+      </svg>
+    );
+  }
+
+  if (type === "context") {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 19V5" />
+        <path d="M4 19h16" />
+        <path d="M7 16v-5" />
+        <path d="M12 16V8" />
+        <path d="M17 16v-8" />
+        <path d="m8 8 3-3 3 3 4-4" />
+        <path d="M18 4h-3" />
+        <path d="M18 4v3" />
+      </svg>
+    );
+  }
+
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <circle cx="12" cy="12" r="8" />
+      <circle cx="12" cy="12" r="3" />
+      <path d="M12 2v3" />
+      <path d="M12 19v3" />
+      <path d="M2 12h3" />
+      <path d="M19 12h3" />
+      <path d="m16.5 7.5 3-3" />
+      <path d="M19.5 4.5h-3" />
+      <path d="M19.5 4.5v3" />
+    </svg>
+  );
+}
+
 export function Flow() {
   const items = [
-    ["01", "Información", "Ordenar lo que existe.", "⌁"],
-    ["02", "Evidencia", "Conectar cada dato con su soporte.", "◇"],
-    ["03", "Contexto", "Entender el estado y la utilidad.", "⌁"],
-    ["04", "Decisión", "Actuar con mayor confianza.", "◎"],
+    { num: "01", title: "Información", desc: "Ordenar lo que existe.", icon: "info" },
+    { num: "02", title: "Evidencia", desc: "Conectar cada dato con su soporte.", icon: "evidence" },
+    { num: "03", title: "Contexto", desc: "Entender el estado y la utilidad.", icon: "context" },
+    { num: "04", title: "Decisión", desc: "Actuar con mayor confianza.", icon: "decision" },
   ];
   return (
     <div className="flow">
-      {items.map(([num, title, desc, icon]) => (
-        <div className="flow-item" key={title}>
-          <div className="flow-top"><span>{num}</span><i>{icon}</i></div>
-          <strong>{title}</strong>
-          <p>{desc}</p>
+      {items.map((item) => (
+        <div className="flow-item" key={item.title}>
+          <div className="flow-card-inner">
+            <span className="flow-number">{item.num}</span>
+            <div className="flow-icon"><FlowIcon type={item.icon} /></div>
+            <strong>{item.title}</strong>
+            <p>{item.desc}</p>
+          </div>
         </div>
       ))}
     </div>
