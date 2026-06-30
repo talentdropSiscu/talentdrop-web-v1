@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "TalentDrop | Sports Decision Infrastructure",
     description:
-      "Transformamos información deportiva dispersa en evidencia verificable, contexto relevante y decisiones con mayor confianza.",
+      "Infraestructura deportiva para transformar información dispersa en evidencia verificable, contexto relevante y decisiones con mayor confianza.",
     url: "https://www.talentdrop.es",
     siteName: "TalentDrop",
     images: [
@@ -25,12 +25,17 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "TalentDrop | Sports Decision Infrastructure",
-    description: "Más evidencia. Mejores decisiones.",
+    description:
+      "Infraestructura deportiva para deportistas, clubes y federaciones. Más evidencia. Mejores decisiones.",
     images: ["https://www.talentdrop.es/img/home-hero.jpg"],
   },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
   return (
     <html lang="es">
       <body>{children}</body>
