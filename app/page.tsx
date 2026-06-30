@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ButtonRow, CTA, CoreLayers, Flow, PageShell, SplitSection } from "./_components/Site";
+import { CTA, CoreLayers, Flow, PageShell, SplitSection } from "./_components/Site";
 
 export default function Home() {
   return (
@@ -13,7 +13,6 @@ export default function Home() {
           <p className="hero-text">
             Infraestructura deportiva para deportistas, clubes y federaciones que transforma información dispersa en evidencia verificable, contexto relevante y decisiones con mayor confianza.
           </p>
-          <ButtonRow />
         </div>
         <Flow />
       </section>
