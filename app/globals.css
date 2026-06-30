@@ -121,3 +121,10 @@
   .flow-item{min-height:150px;border-right:1px solid rgba(255,255,255,.12)}
 }
 @media(max-width:640px){.flow{grid-template-columns:1fr}.flow-item{border-bottom:1px solid rgba(255,255,255,.12)}}
+
+/* v19.2.2 stability release: preserve design, fix hero overlap only */
+@media (min-width:981px){
+  .hero-content{
+    padding-bottom:230px;
+  }
+}
