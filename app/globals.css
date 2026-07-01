@@ -581,3 +581,21 @@
   .use-case-grid{grid-template-columns:1fr}
   .use-case-column{border-right:0!important}
 }
+
+
+/* v19.7 image & overlay fix: brighten landing heroes without changing layout */
+.hero-bg{
+  filter:saturate(1.02) contrast(1.04) brightness(1.10);
+}
+.hero-shade{
+  background:
+    linear-gradient(90deg, rgba(5,7,11,.78) 0%, rgba(5,7,11,.46) 45%, rgba(5,7,11,.10) 100%),
+    linear-gradient(0deg, rgba(5,7,11,.78) 0%, rgba(5,7,11,.06) 48%, rgba(5,7,11,.56) 100%);
+}
+@media (max-width: 900px){
+  .hero-shade{
+    background:
+      linear-gradient(180deg, rgba(5,7,11,.68) 0%, rgba(5,7,11,.48) 44%, rgba(5,7,11,.82) 100%),
+      linear-gradient(90deg, rgba(5,7,11,.72), rgba(5,7,11,.22));
+  }
+}
