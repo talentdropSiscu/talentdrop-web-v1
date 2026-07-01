@@ -79,7 +79,7 @@ export default function Home() {
         eyebrow="Producto"
         title="El Passport no es un perfil. Es una base de evidencia."
         text="El deportista puede ordenar su trayectoria, guardar evidencias relevantes y preparar información útil para clubes, academias, especialistas o programas deportivos."
-        image="/img/product-system.jpg"
+        image="/img/decision-room.jpg"
       />
 
       <section className="section">
