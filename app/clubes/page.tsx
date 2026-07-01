@@ -33,8 +33,8 @@ export default function Clubes() {
     <PageShell>
       <Hero
         eyebrow="B2B · Clubes"
-        title="El software trabaja para el club."
-        text="TalentDrop ayuda a transformar información dispersa en decisiones deportivas más estructuradas, trazables y compartidas."
+        title="La arquitectura trabaja para el club."
+        text="TalentDrop ayuda a los clubes a organizar la información que ya tienen para que las decisiones deportivas sean más claras, trazables y compartidas."
         image="/img/product-system.jpg"
       >
         <div className="button-row">
