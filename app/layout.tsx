@@ -4,38 +4,22 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "TalentDrop | Sports Decision Infrastructure",
   description:
-    "Infraestructura deportiva para deportistas, clubes y federaciones. Más evidencia. Mejores decisiones.",
+    "La infraestructura del dato para mejores decisiones en el deporte. TalentDrop conecta información, evidencias y personas mediante Data Trust y Digital Athlete Identity.",
+  metadataBase: new URL("https://www.talentdrop.es"),
   openGraph: {
     title: "TalentDrop | Sports Decision Infrastructure",
     description:
-      "Infraestructura deportiva para transformar información dispersa en evidencia verificable, contexto relevante y decisiones con mayor confianza.",
+      "La infraestructura del dato para mejores decisiones en el deporte.",
     url: "https://www.talentdrop.es",
-    siteName: "TalentDrop",
-    images: [
-      {
-        url: "https://www.talentdrop.es/img/home-hero.jpg",
-        width: 1200,
-        height: 630,
-        alt: "TalentDrop",
-      },
-    ],
+    siteName: "TalentDrop SportsTech",
     locale: "es_ES",
     type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "TalentDrop | Sports Decision Infrastructure",
-    description:
-      "Infraestructura deportiva para deportistas, clubes y federaciones. Más evidencia. Mejores decisiones.",
-    images: ["https://www.talentdrop.es/img/home-hero.jpg"],
   },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
       <body>{children}</body>
