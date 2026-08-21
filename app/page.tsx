@@ -79,7 +79,8 @@ export default function Home() {
 
           <nav className={styles.nav} aria-label="Navegación principal">
             <a href="#infraestructura">Infraestructura</a>
-            <a href="https://wa.me/34690210722?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20mejor%20TalentDrop%20y%20solicitar%20informaci%C3%B3n%20sobre%20el%20diagn%C3%B3stico%20de%20infraestructura%20deportiva." target="_blank" rel="noopener noreferrer">Diagnostic Engine</a>
+            <a href="#diagnostico">Diagnostic Engine</a>
+            <a href="#passport">Talent Passport</a>
             <a href="#ecosistema">Ecosistema</a>
             <a href="#knowledge">Knowledge</a>
             <a href="https://wa.me/34690210722?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20mejor%20TalentDrop%20y%20solicitar%20informaci%C3%B3n%20sobre%20el%20diagn%C3%B3stico%20de%20infraestructura%20deportiva." target="_blank" rel="noopener noreferrer">Contacto</a>
@@ -133,7 +134,7 @@ export default function Home() {
               <div className={styles.systemFlow}>
                 {[
                   ["01", "Información", "Existe en sistemas, documentos y personas"],
-                  ["02", "Contrastar", "Definen qué debe existir y quién interviene"],
+                  ["02", "Protocolos", "Definen qué debe existir y quién interviene"],
                   ["03", "Data Trust", "Valida origen, contexto, permisos y trazabilidad"],
                   ["04", "Coordinación", "Activa responsables, evidencias y validaciones"],
                   ["05", "Decisión", "Llega cuando la infraestructura está preparada"],
@@ -330,6 +331,78 @@ export default function Home() {
         </div>
       </section>
 
+      <section className={styles.passport} id="passport">
+        <div className={styles.container}>
+          <div className={styles.passportGrid}>
+            <div className={styles.passportCopy}>
+              <p className={styles.eyebrow}>TalentDrop Player Passport</p>
+              <h2>El club pasa a construir infraestructura alrededor de cada jugador.</h2>
+              <p className={styles.passportLead}>
+                El Talent Passport no es una ficha. Es el punto donde convergen
+                información, protocolos, evidencias, responsabilidades e historial
+                para acompañar la evolución del jugador y preparar mejores decisiones.
+              </p>
+
+              <div className={styles.passportPoints}>
+                <div><span>01</span><div><strong>Protocolos aplicables</strong><p>Qué debe existir según la etapa, proceso o decisión.</p></div></div>
+                <div><span>02</span><div><strong>Información conectada</strong><p>Rendimiento, salud, formación, scouting, documentación y contexto.</p></div></div>
+                <div><span>03</span><div><strong>Evidencias y trazabilidad</strong><p>Qué se utilizó, cuándo se actualizó y quién lo validó.</p></div></div>
+                <div><span>04</span><div><strong>Continuidad</strong><p>El conocimiento acompaña al jugador dentro de la infraestructura del club.</p></div></div>
+              </div>
+            </div>
+
+            <div className={styles.passportMockup} aria-label="Ejemplo visual de Talent Passport">
+              <div className={styles.passportHeader}>
+                <div className={styles.passportAvatar}>AM</div>
+                <div>
+                  <span className={styles.passportLabel}>Talent Passport</span>
+                  <h3>Álvaro Martínez López</h3>
+                  <p>Delantero · Juvenil A</p>
+                </div>
+                <span className={styles.passportStatus}>ACTIVO</span>
+              </div>
+
+              <div className={styles.passportTabs}>
+                <span className={styles.activeTab}>Resumen</span>
+                <span>Rendimiento</span>
+                <span>Salud</span>
+                <span>Evidencias</span>
+                <span>Historial</span>
+              </div>
+
+              <div className={styles.passportMetrics}>
+                <div className={styles.passportMetric}>
+                  <span>Índice de desarrollo</span>
+                  <strong>78</strong>
+                  <small>/100</small>
+                  <div className={styles.passportBar}><i style={{ width: "78%" }} /></div>
+                </div>
+                <div className={styles.passportMetric}>
+                  <span>Disponibilidad</span>
+                  <strong className={styles.available}>Disponible</strong>
+                  <small>Sin limitaciones registradas</small>
+                </div>
+                <div className={styles.passportMetric}>
+                  <span>Protocolos activos</span>
+                  <strong>4</strong>
+                  <small>Desarrollo · Salud · Promoción · Seguimiento</small>
+                </div>
+                <div className={styles.passportMetric}>
+                  <span>Última actualización</span>
+                  <strong>Hoy</strong>
+                  <small>Información sincronizada</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className={styles.passportClosing}>
+            <span>Un activo para el club.</span>
+            <strong>Un activo para el futuro de cada jugador.</strong>
+          </div>
+        </div>
+      </section>
+
       <section className={styles.audiences} id="ecosistema">
         <div className={styles.container}>
           <div className={styles.sectionIntro}>
@@ -404,9 +477,7 @@ export default function Home() {
             <div>
               <h2>Descubramos cómo está preparada hoy vuestra infraestructura deportiva.</h2>
               <p>
-                El primer paso no es implantar software. Es entender cómo
-                circula la información, qué exigen los protocolos y dónde
-                existen brechas, dependencias o fricciones.
+                Empezamos con un diagnóstico breve para entender cómo circula hoy la información, qué protocolos existen y qué debe ordenarse primero.
               </p>
               <a
                 className={styles.primaryButton}
@@ -432,7 +503,7 @@ export default function Home() {
           <div className={styles.footerBottom}>
             <span>© 2026 TalentDrop</span>
             <div>
-              <a href="#core-os">Core OS</a>
+              <a href="#infraestructura-core">Core OS</a>
               <Link href="/deportistas">Deportistas</Link>
               <Link href="/clubes">Clubes</Link>
               <Link href="/federaciones">Federaciones</Link>
