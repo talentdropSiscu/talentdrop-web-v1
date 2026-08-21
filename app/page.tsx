@@ -1,343 +1,456 @@
 import Link from "next/link";
 import styles from "./home.module.css";
 
-const audiences = [
-  {
-    tag: "B2B",
-    title: "Clubes",
-    text: "Organizamos información, evidencias y responsabilidades alrededor de las decisiones deportivas.",
-    items: ["Sistema de decisión", "Coordinación entre áreas", "ClubOS"],
-    href: "/clubes",
-  },
-  {
-    tag: "B2G",
-    title: "Federaciones",
-    text: "Conectamos clubes, deportistas y programas sobre una infraestructura federativa común.",
-    items: ["Expediente Digital", "Convocatorias", "Tecnificación"],
-    href: "/federaciones",
-  },
-  {
-    tag: "B2G",
-    title: "Administraciones",
-    text: "Digitalizamos programas deportivos para mejorar seguimiento, trazabilidad e impacto.",
-    items: ["Programas deportivos", "Indicadores", "Evidencias"],
-    href: "/administraciones",
-  },
-  {
-    tag: "B2C",
-    title: "Deportistas",
-    text: "Construimos una identidad deportiva digital verificable que evoluciona con cada trayectoria.",
-    items: ["Talent Passport", "Historial", "Oportunidades"],
-    href: "/deportistas",
-  },
-];
-
 const capabilities = [
   {
     number: "01",
-    title: "Organizar",
-    text: "Estructuramos la información que hoy vive repartida entre personas, documentos y sistemas.",
+    title: "Diagnostic Engine",
+    text: "Entiende cómo funciona realmente la organización, contrasta su situación con protocolos operativos y convierte el diagnóstico en prioridades accionables.",
   },
   {
     number: "02",
-    title: "Validar",
-    text: "Aplicamos Data Trust para conocer el origen, la calidad y el nivel de confianza de cada evidencia.",
+    title: "System Capture + Voice to Record",
+    text: "Conecta información procedente de sistemas y documentos, y transforma conocimiento humano en registros estructurados, contextualizados y trazables.",
   },
   {
     number: "03",
-    title: "Conectar",
-    text: "Coordinamos personas, áreas y organizaciones sin obligarlas a sustituir sus herramientas actuales.",
+    title: "Data & Knowledge Infrastructure",
+    text: "Relaciona información, evidencias, personas y contexto para que cada área pueda trabajar sobre una realidad común.",
   },
   {
     number: "04",
-    title: "Decidir",
-    text: "Preparamos cada decisión con la información, las evidencias y las personas adecuadas.",
+    title: "Protocol Library + Data Trust",
+    text: "Define qué información necesita cada proceso, quién debe aportarla y con qué origen, permisos, actualización y trazabilidad.",
   },
   {
     number: "05",
-    title: "Aprender",
-    text: "Convertimos cada decisión en conocimiento reutilizable para la organización y el ecosistema.",
+    title: "Decision Infrastructure",
+    text: "Hace visible qué está disponible, qué falta y quién debe actuar antes de que una decisión deportiva llegue a la mesa.",
   },
 ];
 
-const pillars = [
+const audiences = [
   {
-    title: "Sports Decision Infrastructure",
-    text: "La capa operativa que organiza cómo fluye la información antes, durante y después de una decisión.",
+    eyebrow: "Clubes",
+    title: "Conectamos las áreas alrededor de los procesos y decisiones deportivas.",
+    text: "Diagnóstico, protocolos, continuidad de información, Control Room y Decision Infrastructure sobre una capa común.",
+    href: "/clubes",
+    link: "Para clubes",
   },
   {
-    title: "Data Trust",
-    text: "La capa de confianza que permite saber qué información está validada, cuál necesita revisión y cómo puede utilizarse.",
+    eyebrow: "Federaciones",
+    title: "Construimos infraestructura transversal para conocimiento deportivo.",
+    text: "Una base compartida para ordenar, validar y conectar información entre programas, clubes, deportistas y estructuras técnicas.",
+    href: "/federaciones",
+    link: "Para federaciones",
   },
   {
-    title: "Digital Athlete Identity",
-    text: "Una identidad deportiva digital verificable que conecta trayectoria, evidencias y oportunidades del deportista.",
+    eyebrow: "Administraciones",
+    title: "Damos continuidad y trazabilidad a programas deportivos.",
+    text: "Objetivos, participantes, evidencias, indicadores, responsables y resultados conectados dentro de una misma infraestructura.",
+    href: "#contacto",
+    link: "Para administraciones",
+  },
+  {
+    eyebrow: "Deportistas",
+    title: "Construimos una identidad deportiva continua y verificable.",
+    text: "Talent Passport conecta trayectoria, evidencias, contexto y evolución para que el conocimiento acompañe al deportista.",
+    href: "/deportistas",
+    link: "Para deportistas",
   },
 ];
 
-export default function HomePage() {
+const knowledge = [
+  "Qué es una Sports Decision Infrastructure",
+  "Por qué una decisión no empieza cuando hay que decidir",
+  "Qué significa Data Trust en el deporte",
+  "Cómo funcionan los protocolos deportivos",
+  "Del conocimiento individual al conocimiento organizativo",
+  "Cómo preparar una decisión sin sustituir el criterio profesional",
+];
+
+const processAreas = [
+  "Dirección Deportiva",
+  "Scouting",
+  "Cantera",
+  "Performance",
+  "Área Médica",
+  "Secretaría Técnica",
+  "Finanzas",
+  "Dirección General",
+];
+
+export default function Home() {
   return (
     <main className={styles.page}>
       <header className={styles.header}>
-        <Link href="/" className={styles.brand} aria-label="TalentDrop, inicio">
-          <span className={styles.brandMark} aria-hidden="true">
-            <i />
-            <i />
-            <i />
-          </span>
-          <span>TalentDrop</span>
-        </Link>
+        <div className={styles.headerInner}>
+          <Link href="/" className={styles.brand} aria-label="TalentDrop">
+            <span className={styles.brandMark}>T</span>
+            <span>TalentDrop</span>
+          </Link>
 
-        <nav className={styles.nav} aria-label="Navegación principal">
-          <a href="#infraestructura">Infraestructura</a>
-          <a href="#capacidades">Capacidades</a>
-          <a href="#ecosistema">Ecosistema</a>
-          <a href="#metodologia">Metodología</a>
-          <Link href="/contacto" className={styles.navCta}>Contacto</Link>
-        </nav>
+          <nav className={styles.nav} aria-label="Navegación principal">
+            <a href="#core-os">Core OS</a>
+            <Link href="/deportistas">Deportistas</Link>
+            <Link href="/clubes">Clubes</Link>
+            <Link href="/federaciones">Federaciones</Link>
+            <a href="#contacto">Contacto</a>
+          </nav>
+
+          <a href="#contacto" className={styles.headerCta}>
+            Solicitar diagnóstico
+          </a>
+        </div>
       </header>
 
       <section className={styles.hero}>
         <div className={styles.heroGlow} aria-hidden="true" />
-        <div className={styles.eyebrow}>
-          SPORTS DECISION INFRASTRUCTURE · DATA TRUST
-        </div>
-        <h1>
-          La infraestructura del dato para
-          <span> mejores decisiones en el deporte.</span>
-        </h1>
-        <p className={styles.heroCopy}>
-          TalentDrop organiza, valida y conecta información, evidencias y
-          personas para ayudar a clubes, federaciones, administraciones y
-          deportistas a decidir con mayor confianza.
-        </p>
-        <div className={styles.heroActions}>
-          <Link href="/contacto" className={styles.primaryButton}>
-            Solicitar una reunión
-          </Link>
-          <a href="#infraestructura" className={styles.secondaryButton}>
-            Descubrir cómo funciona
-          </a>
-        </div>
-
-        <div className={styles.flow} aria-label="Flujo de valor de TalentDrop">
-          <div>
-            <small>01</small>
-            <strong>Información</strong>
-            <span>Datos dispersos</span>
-          </div>
-          <b>→</b>
-          <div>
-            <small>02</small>
-            <strong>Evidencias</strong>
-            <span>Contexto verificable</span>
-          </div>
-          <b>→</b>
-          <div className={styles.flowFocus}>
-            <small>03</small>
-            <strong>Data Trust</strong>
-            <span>Confianza y trazabilidad</span>
-          </div>
-          <b>→</b>
-          <div>
-            <small>04</small>
-            <strong>Decisiones</strong>
-            <span>Mejor preparadas</span>
-          </div>
-        </div>
-      </section>
-
-      <section className={styles.problem}>
-        <div className={styles.sectionIntro}>
-          <span>EL RETO</span>
-          <h2>Más datos no significan mejores decisiones.</h2>
-        </div>
-        <div className={styles.problemGrid}>
-          <article>
-            <span>01</span>
-            <h3>Información fragmentada</h3>
-            <p>
-              Informes, vídeos, métricas, documentos y observaciones viven en
-              lugares distintos y con niveles de confianza diferentes.
-            </p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Criterios desconectados</h3>
-            <p>
-              Las áreas participan en decisiones comunes, pero no siempre
-              comparten el mismo contexto, lenguaje o momento de trabajo.
-            </p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Decisiones difíciles de reconstruir</h3>
-            <p>
-              Con frecuencia se conoce el resultado, pero no queda claro qué
-              información se utilizó, qué faltaba y por qué se decidió.
-            </p>
-          </article>
-        </div>
-        <p className={styles.thesis}>
-          El dato ya no es la ventaja competitiva. La ventaja está en cómo se
-          gobierna, se conecta y se convierte en decisiones confiables.
-        </p>
-      </section>
-
-      <section id="infraestructura" className={styles.infrastructure}>
-        <div className={styles.sectionIntroLight}>
-          <span>QUÉ CONSTRUIMOS</span>
-          <h2>Una infraestructura común para todo el ecosistema deportivo.</h2>
-          <p>
-            TalentDrop no sustituye el software existente. Lo conecta
-            alrededor de las decisiones que realmente importan.
-          </p>
-        </div>
-        <div className={styles.pillars}>
-          {pillars.map((pillar, index) => (
-            <article key={pillar.title}>
-              <span>0{index + 1}</span>
-              <h3>{pillar.title}</h3>
-              <p>{pillar.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="capacidades" className={styles.capabilities}>
-        <div className={styles.sectionIntro}>
-          <span>CAPACIDADES</span>
-          <h2>Del dato a la decisión. De la decisión al aprendizaje.</h2>
-        </div>
-        <div className={styles.capabilityList}>
-          {capabilities.map((capability) => (
-            <article key={capability.number}>
-              <span>{capability.number}</span>
-              <h3>{capability.title}</h3>
-              <p>{capability.text}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="ecosistema" className={styles.audiences}>
-        <div className={styles.sectionIntro}>
-          <span>PARA QUIÉN</span>
-          <h2>Una infraestructura. Cuatro recorridos.</h2>
-          <p>
-            Cada actor mantiene su misión, sus permisos y su contexto. La
-            información se conecta únicamente cuando aporta valor a una
-            decisión.
-          </p>
-        </div>
-        <div className={styles.audienceGrid}>
-          {audiences.map((audience) => (
-            <Link href={audience.href} className={styles.audienceCard} key={audience.title}>
-              <div>
-                <small>{audience.tag}</small>
-                <span aria-hidden="true">↗</span>
+        <div className={styles.container}>
+          <div className={styles.heroGrid}>
+            <div className={styles.heroCopy}>
+              <p className={styles.kicker}>Sports Decision Infrastructure</p>
+              <h1>
+                La infraestructura sobre la que se preparan las decisiones del
+                deporte.
+              </h1>
+              <p className={styles.heroLead}>
+                Clubes, federaciones y organizaciones deportivas ya tienen
+                datos, herramientas y profesionales. TalentDrop conecta
+                <strong> información, evidencias, protocolos, responsabilidades y conocimiento</strong>{" "}
+                para que puedan trabajar y decidir sobre una realidad común.
+              </p>
+              <div className={styles.heroActions}>
+                <a href="#diagnostico" className={styles.primaryButton}>
+                  Solicitar diagnóstico
+                  <span aria-hidden="true">↘</span>
+                </a>
+                <a href="#como-funciona" className={styles.secondaryButton}>
+                  Ver cómo funciona
+                </a>
               </div>
-              <h3>{audience.title}</h3>
-              <p>{audience.text}</p>
-              <ul>
-                {audience.items.map((item) => <li key={item}>{item}</li>)}
-              </ul>
-            </Link>
-          ))}
-        </div>
-      </section>
+            </div>
 
-      <section id="metodologia" className={styles.method}>
-        <div className={styles.methodCopy}>
-          <span>NUESTRA METODOLOGÍA</span>
-          <h2>La tecnología se activa cuando la decisión está comprendida.</h2>
-          <p>
-            Empezamos analizando cómo decide realmente la organización. A
-            partir de ahí diseñamos una infraestructura adaptada a su realidad,
-            prioridades y capacidad de adopción.
-          </p>
-          <Link href="/contacto" className={styles.textLink}>
-            Hablar sobre un diagnóstico <span>→</span>
-          </Link>
-        </div>
-        <ol className={styles.methodSteps}>
-          <li><span>01</span><div><strong>Comprender</strong><p>Decisiones, personas y contexto.</p></div></li>
-          <li><span>02</span><div><strong>Diagnosticar</strong><p>Silos, bloqueos, evidencias y riesgos.</p></div></li>
-          <li><span>03</span><div><strong>Diseñar</strong><p>Modelo operativo y arquitectura del dato.</p></div></li>
-          <li><span>04</span><div><strong>Activar</strong><p>Procesos, permisos e infraestructura.</p></div></li>
-          <li><span>05</span><div><strong>Evolucionar</strong><p>Aprendizaje, trazabilidad y mejora continua.</p></div></li>
-        </ol>
-      </section>
-
-      <section className={styles.difference}>
-        <div className={styles.sectionIntro}>
-          <span>LO QUE NOS HACE DIFERENTES</span>
-          <h2>No trabajamos para acumular más información.</h2>
-          <p>Trabajamos para que la organización pueda confiar en ella y utilizarla mejor.</p>
-        </div>
-        <div className={styles.comparison}>
-          <div className={styles.comparisonHead}>
-            <span>OTRAS SOLUCIONES</span>
-            <strong>TALENTDROP</strong>
+            <div className={styles.heroSystem} aria-label="Recorrido de TalentDrop">
+              <div className={styles.systemHeader}>
+                <span>Preparación de una decisión</span>
+                <span className={styles.liveDot}>Infraestructura activa</span>
+              </div>
+              <div className={styles.systemFlow}>
+                {[
+                  ["01", "Información", "Existe en sistemas, documentos y personas"],
+                  ["02", "Protocolos", "Definen qué debe existir y quién interviene"],
+                  ["03", "Brechas", "El sistema identifica qué falta"],
+                  ["04", "Coordinación", "Activa responsables, evidencias y validaciones"],
+                  ["05", "Decisión", "Llega cuando la infraestructura está preparada"],
+                ].map(([n, title, text]) => (
+                  <div className={styles.systemStep} key={n}>
+                    <span className={styles.stepNumber}>{n}</span>
+                    <div>
+                      <strong>{title}</strong>
+                      <p>{text}</p>
+                    </div>
+                    <span className={styles.stepSignal} aria-hidden="true" />
+                  </div>
+                ))}
+              </div>
+              <div className={styles.systemFooter}>
+                TalentDrop no decide por la organización. Hace que esté
+                preparada para decidir.
+              </div>
+            </div>
           </div>
-          <div><span>Almacenan datos</span><strong>Organiza confianza sobre el dato</strong></div>
-          <div><span>Muestran indicadores</span><strong>Prepara decisiones</strong></div>
-          <div><span>Digitalizan tareas</span><strong>Coordina personas, evidencias y procesos</strong></div>
-          <div><span>Sustituyen herramientas</span><strong>Conecta el ecosistema existente</strong></div>
-          <div><span>Registran resultados</span><strong>Construye trazabilidad y aprendizaje</strong></div>
         </div>
       </section>
 
-      <section className={styles.knowledge}>
-        <div>
-          <span>KNOWLEDGE LIBRARY</span>
-          <h2>El conocimiento operativo también forma parte de la infraestructura.</h2>
-        </div>
-        <p>
-          TalentDrop estructura procesos, decisiones, evidencias, roles y
-          criterios deportivos para convertir experiencia dispersa en una base
-          de conocimiento viva, reutilizable y adaptable.
-        </p>
-        <div className={styles.knowledgeDomains}>
-          <span>Dirección deportiva</span>
-          <span>Scouting</span>
-          <span>Cantera</span>
-          <span>Performance</span>
-          <span>Área médica</span>
-          <span>Federaciones</span>
+      <section className={styles.thesis} id="tesis">
+        <div className={styles.container}>
+          <div className={styles.sectionIntro}>
+            <p className={styles.eyebrow}>La tesis de TalentDrop</p>
+            <h2>El problema no es la falta de datos.</h2>
+          </div>
+
+          <div className={styles.thesisGrid}>
+            <div className={styles.thesisStatement}>
+              <p>
+                El reto es convertir información distribuida en capacidad
+                permanente para operar y decidir.
+              </p>
+            </div>
+            <div className={styles.thesisBody}>
+              <p>
+                Una organización deportiva genera continuamente informes,
+                vídeos, datos, documentos, observaciones y conversaciones.
+                Cada herramienta puede cumplir correctamente su función y, aun
+                así, la información seguir desconectada del proceso que la
+                necesita.
+              </p>
+              <p>
+                Cuando una decisión requiere a Dirección Deportiva, Scouting,
+                Performance, Área Médica, Secretaría Técnica o Finanzas, alguien
+                termina reconstruyendo manualmente el contexto.
+              </p>
+              <p className={styles.emphasis}>
+                TalentDrop construye la infraestructura que conecta ese
+                conocimiento con los protocolos, responsabilidades y evidencias
+                necesarias para actuar.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
-      <section className={styles.finalCta}>
-        <span>SIGUIENTE PASO</span>
-        <h2>Construyamos una forma más confiable de decidir en el deporte.</h2>
-        <p>
-          Empezamos comprendiendo cómo funciona hoy tu organización y qué
-          decisiones necesitan una mejor infraestructura.
-        </p>
-        <Link href="/contacto" className={styles.primaryButton}>
-          Solicitar una reunión
-        </Link>
+      <section className={styles.darkSection} id="como-funciona">
+        <div className={styles.container}>
+          <div className={styles.darkIntro}>
+            <p className={styles.eyebrowLight}>Cómo trabaja TalentDrop</p>
+            <h2>Una decisión no empieza cuando hay que decidir.</h2>
+            <p>
+              Empieza mucho antes: cuando la información está disponible, los
+              protocolos son claros y cada área sabe qué debe aportar.
+            </p>
+          </div>
+
+          <div className={styles.decisionFlow}>
+            {[
+              ["Descubre", "Cómo funciona realmente la organización"],
+              ["Organiza", "Sistemas, documentos y conocimiento humano"],
+              ["Contrasta", "Realidad frente a protocolos y criterios"],
+              ["Coordina", "Pendientes, responsables y evidencias"],
+              ["Prepara", "El contexto necesario para decidir"],
+            ].map(([title, text], index) => (
+              <div className={styles.decisionItem} key={title}>
+                <span className={styles.decisionIndex}>0{index + 1}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className={styles.darkClosing}>
+            La IA puede ayudar a organizar, relacionar y detectar. El criterio
+            deportivo sigue perteneciendo a las personas.
+          </p>
+        </div>
+      </section>
+
+      <section className={styles.capabilities} id="core-os">
+        <div className={styles.container}>
+          <div className={styles.splitHeading}>
+            <div>
+              <p className={styles.eyebrow}>Core OS</p>
+              <h2>La capa que conecta fuentes, personas, protocolos y decisiones.</h2>
+            </div>
+            <p>
+              No sustituimos el software de la organización. Lo conectamos
+              alrededor de sus procesos y decisiones.
+            </p>
+          </div>
+
+          <div className={styles.capabilityList}>
+            {capabilities.map((item) => (
+              <article className={styles.capability} key={item.number}>
+                <span>{item.number}</span>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.journey} id="diagnostico">
+        <div className={styles.container}>
+          <div className={styles.journeyCard}>
+            <p className={styles.eyebrow}>Diagnostic Engine</p>
+            <h2>Antes de implantar, entendemos cómo funciona realmente la organización.</h2>
+            <div className={styles.journeyTrack}>
+              {[
+                "20 preguntas",
+                "8 áreas",
+                "14 protocolos",
+                "70 criterios",
+                "Prioridades accionables",
+                "Infraestructura propuesta",
+              ].map((item, index) => (
+                <div className={styles.journeyStep} key={item}>
+                  <span>{String(index + 1).padStart(2, "0")}</span>
+                  <strong>{item}</strong>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.library}>
+        <div className={styles.container}>
+          <div className={styles.libraryGrid}>
+            <div>
+              <p className={styles.eyebrow}>Del diagnóstico a la infraestructura</p>
+              <h2>El resultado no es un score. Es saber qué ordenar primero.</h2>
+              <p className={styles.libraryLead}>
+                TalentDrop convierte las respuestas en hallazgos explicables,
+                prioridades, responsables y acciones. Después utiliza ese mismo
+                diagnóstico para construir la Control Room y preparar casos de
+                decisión.
+              </p>
+              <div className={styles.areaCloud}>
+                {processAreas.map((area) => (
+                  <span key={area}>{area}</span>
+                ))}
+              </div>
+            </div>
+
+            <div className={styles.libraryPanel}>
+              <span className={styles.panelLabel}>Ejemplo · prioridad detectada</span>
+              <h3>Área Médica · disponibilidad de evidencia</h3>
+              <dl>
+                <div>
+                  <dt>Hallazgo</dt>
+                  <dd>
+                    Determinada información depende todavía de una solicitud
+                    manual para estar disponible.
+                  </dd>
+                </div>
+                <div>
+                  <dt>Protocolo</dt>
+                  <dd>
+                    Define qué evidencia debe existir antes de que el proceso
+                    pueda avanzar.
+                  </dd>
+                </div>
+                <div>
+                  <dt>Responsable</dt>
+                  <dd>
+                    El sistema identifica quién debe aportar o validar la
+                    información.
+                  </dd>
+                </div>
+                <div>
+                  <dt>Acción</dt>
+                  <dd>
+                    Formalizar disponibilidad, actualización y trazabilidad
+                    dentro de la infraestructura.
+                  </dd>
+                </div>
+                <div>
+                  <dt>Resultado</dt>
+                  <dd>
+                    La siguiente decisión no empieza persiguiendo información
+                    desde cero.
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.audiences} id="para-quien">
+        <div className={styles.container}>
+          <div className={styles.sectionIntro}>
+            <p className={styles.eyebrow}>Para quién construimos</p>
+            <h2>Una infraestructura. Distintos contextos deportivos.</h2>
+          </div>
+
+          <div className={styles.audienceGrid}>
+            {audiences.map((item) => (
+              <article className={styles.audienceCard} key={item.eyebrow}>
+                <p className={styles.cardEyebrow}>{item.eyebrow}</p>
+                <h3>{item.title}</h3>
+                <p>{item.text}</p>
+                <Link href={item.href}>{item.link} →</Link>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.knowledge} id="knowledge">
+        <div className={styles.container}>
+          <div className={styles.splitHeading}>
+            <div>
+              <p className={styles.eyebrow}>Knowledge</p>
+              <h2>Ideas para comprender la nueva infraestructura del deporte.</h2>
+            </div>
+            <p>
+              Una biblioteca para explicar cómo se prepara una decisión, cómo
+              funcionan los protocolos y por qué el conocimiento debe tratarse
+              como un activo organizativo.
+            </p>
+          </div>
+
+          <div className={styles.knowledgeGrid}>
+            {knowledge.map((item, index) => (
+              <article className={styles.knowledgeCard} key={item}>
+                <span>Idea {String(index + 1).padStart(2, "0")}</span>
+                <h3>{item}</h3>
+                <a href="#contacto">Próximamente ↗</a>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.category}>
+        <div className={styles.container}>
+          <div className={styles.categoryCard}>
+            <p className={styles.eyebrowLight}>Una nueva categoría</p>
+            <h2>Sports Decision Infrastructure</h2>
+            <p>
+              No es un ERP. No es un BI. No es otro software vertical para
+              cada área. Es la infraestructura que conecta información,
+              evidencias, protocolos, responsabilidades y conocimiento
+              alrededor de los procesos y decisiones deportivas.
+            </p>
+            <a href="#contacto">Conocer la categoría →</a>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.finalCta} id="contacto">
+        <div className={styles.container}>
+          <div className={styles.finalGrid}>
+            <p className={styles.eyebrow}>Siguiente paso</p>
+            <div>
+              <h2>Descubramos cómo está preparada hoy vuestra infraestructura deportiva.</h2>
+              <p>
+                El primer paso no es implantar software. Es entender cómo
+                circula la información, qué exigen los protocolos y dónde
+                existen brechas, dependencias o fricciones.
+              </p>
+              <a
+                className={styles.primaryButton}
+                href="mailto:contacto@talentdrop.es?subject=Solicitar%20diagn%C3%B3stico%20TalentDrop"
+              >
+                Solicitar diagnóstico
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </section>
 
       <footer className={styles.footer}>
-        <div>
-          <Link href="/" className={styles.brand}>
-            <span className={styles.brandMark} aria-hidden="true"><i /><i /><i /></span>
-            <span>TalentDrop</span>
-          </Link>
-          <p>La infraestructura del dato para mejores decisiones en el deporte.</p>
-        </div>
-        <div className={styles.footerLinks}>
-          <Link href="/clubes">Clubes</Link>
-          <Link href="/federaciones">Federaciones</Link>
-          <Link href="/administraciones">Administraciones</Link>
-          <Link href="/deportistas">Deportistas</Link>
-          <Link href="/contacto">Contacto</Link>
-        </div>
-        <div className={styles.footerMeta}>
-          <a href="mailto:contacto@talentdrop.es">contacto@talentdrop.es</a>
-          <span>© 2026 TalentDrop SportsTech</span>
+        <div className={styles.container}>
+          <div className={styles.footerTop}>
+            <Link href="/" className={styles.brand}>
+              <span className={styles.brandMark}>T</span>
+              <span>TalentDrop</span>
+            </Link>
+            <p>Sports Decision Infrastructure</p>
+          </div>
+          <div className={styles.footerBottom}>
+            <span>© 2026 TalentDrop</span>
+            <div>
+              <a href="#core-os">Core OS</a>
+              <Link href="/deportistas">Deportistas</Link>
+              <Link href="/clubes">Clubes</Link>
+              <Link href="/federaciones">Federaciones</Link>
+              <a href="mailto:contacto@talentdrop.es">Contacto</a>
+            </div>
+          </div>
         </div>
       </footer>
     </main>
