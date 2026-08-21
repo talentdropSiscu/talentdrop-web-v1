@@ -1742,3 +1742,193 @@
   line-height: 1.65;
   font-weight: 650;
 }
+
+
+/* =========================================================
+   V3.5.1 — READABILITY / CONTRAST FIX
+   Explicit text colors per surface. Prevents inherited white
+   text from leaking onto light cards and light sections.
+   ========================================================= */
+
+/* LIGHT SURFACES — always dark text */
+.hero,
+.thesis,
+.capabilities,
+.library,
+.audiences,
+.finalCta,
+.challengeSection {
+  color: #10233c;
+}
+
+.hero h1,
+.thesis h2,
+.capabilities h2,
+.library h2,
+.audiences h2,
+.finalCta h2,
+.challengeSection h2 {
+  color: #07182d;
+}
+
+.hero p,
+.thesis p,
+.libraryLead,
+.finalGrid > div p,
+.challengeSection p {
+  color: #53677c;
+}
+
+.eyebrow,
+.kicker,
+.cardEyebrow {
+  color: #1457d9;
+}
+
+/* LIGHT CTA / navigation */
+.secondaryButton {
+  color: #07182d !important;
+  background: #ffffff;
+  border-color: #cfd9e4;
+}
+
+/* CORE OS lives on a light section, but its cards are dark */
+.capability {
+  color: #ffffff;
+}
+.capability h3,
+.capability > span {
+  color: #ffffff !important;
+}
+.capability p {
+  color: #d2dce6 !important;
+}
+
+/* Diagnostic Engine is dark */
+.journey,
+.journeyCard {
+  color: #ffffff;
+}
+.journeyCard h2,
+.journeyCard .eyebrow,
+.journeyStep strong {
+  color: #ffffff !important;
+}
+.journeyStep span {
+  color: #e8f0f8 !important;
+}
+
+/* Diagnostic output: left side light, result panel dark */
+.library h2,
+.library .eyebrow {
+  color: #07182d;
+}
+.areaCloud span {
+  color: #07182d !important;
+}
+.libraryPanel,
+.libraryPanel h3,
+.libraryPanel dt {
+  color: #ffffff !important;
+}
+.libraryPanel dd {
+  color: #cbd8e4 !important;
+}
+.libraryPanel .panelLabel {
+  color: #8fb7ff !important;
+}
+.libraryPanel dl > div:last-child dt,
+.libraryPanel dl > div:last-child dd {
+  color: #ffffff !important;
+}
+
+/* Ecosystem: first 3 dark, fourth sand/light */
+.audienceCard:nth-child(-n+3) {
+  color: #ffffff;
+}
+.audienceCard:nth-child(-n+3) h3 {
+  color: #ffffff !important;
+}
+.audienceCard:nth-child(-n+3) > p:not(.cardEyebrow) {
+  color: #cfdae5 !important;
+}
+.audienceCard:nth-child(-n+3) .cardEyebrow {
+  color: #9fc1ff !important;
+}
+.audienceCard:nth-child(-n+3) a {
+  color: #ffffff !important;
+}
+
+.audienceCard:nth-child(4) {
+  color: #07182d;
+}
+.audienceCard:nth-child(4) h3,
+.audienceCard:nth-child(4) .cardEyebrow,
+.audienceCard:nth-child(4) a {
+  color: #07182d !important;
+}
+.audienceCard:nth-child(4) > p:not(.cardEyebrow) {
+  color: #33485d !important;
+}
+
+/* Knowledge is fully dark */
+.knowledge {
+  color: #ffffff;
+}
+.knowledge h2,
+.knowledge .eyebrow {
+  color: #ffffff !important;
+}
+.knowledge .splitHeading > p {
+  color: #b9c8d7 !important;
+}
+.knowledgeCard,
+.knowledgeCard h3 {
+  color: #ffffff !important;
+}
+.knowledgeCard span {
+  color: #a9bed2 !important;
+}
+.knowledgeCard a {
+  color: #b8d0ff !important;
+}
+
+/* Category is royal blue */
+.categoryCard,
+.categoryCard h2,
+.categoryCard .eyebrowLight,
+.categoryCard a {
+  color: #ffffff !important;
+}
+.categoryCard p:not(.eyebrowLight) {
+  color: #edf3ff !important;
+}
+
+/* Final CTA and footer return to light */
+.finalCta,
+.finalCta h2,
+.footer,
+.footer .brand {
+  color: #07182d;
+}
+.finalCta .eyebrow {
+  color: #1457d9 !important;
+}
+.footerTop p,
+.footerBottom {
+  color: #64768a;
+}
+
+/* Competitive-safe note sits on the light Core OS section */
+.coreOsNote {
+  color: #344d65 !important;
+}
+
+/* Mobile retains contrast explicitly */
+@media (max-width: 680px) {
+  .audienceCard:nth-child(4) h3,
+  .audienceCard:nth-child(4) p,
+  .audienceCard:nth-child(4) a {
+    color: #07182d !important;
+  }
+}
