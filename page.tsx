@@ -128,7 +128,14 @@ export default function Home() {
               </div>
             </div>
 
-            <div className={styles.heroSystem} aria-label="Recorrido de TalentDrop">
+            <div className={styles.heroVisual}>
+              <img src="/img/decision-room.jpg" alt="Equipo deportivo preparando una decisión con información y evidencias" />
+              <div className={styles.heroVisualShade} />
+              <div className={styles.heroVisualBadge}><span>Decision environment</span><strong>Información · protocolos · personas · evidencia</strong></div>
+            </div>
+          </div>
+
+          <div className={styles.heroSystem} aria-label="Recorrido de TalentDrop">
               <div className={styles.systemHeader}>
                 <span>Preparación de una decisión</span>
                 <span className={styles.liveDot}>Infraestructura activa</span>
@@ -152,11 +159,9 @@ export default function Home() {
                 ))}
               </div>
               <div className={styles.systemFooter}>
-                TalentDrop no decide por la organización. Hace que esté
-                preparada para decidir.
+                TalentDrop no decide por la organización. Hace que esté preparada para decidir.
               </div>
             </div>
-          </div>
         </div>
       </section>
 
@@ -164,7 +169,7 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.challengeGrid}>
             <div className={styles.challengePhoto} aria-label="Trabajo real en un entorno deportivo">
-              <img src="/img/athletes-hero.jpg" alt="Deportistas y staff trabajando en un entorno deportivo real" />
+              <img src="/img/director-athlete-session.jpg" alt="Deportistas y staff trabajando en un entorno deportivo real" />
               <div className={styles.photoCaption}>
                 <span>Infraestructura antes que decisión</span>
                 <strong>La información debe estar disponible antes de que alguien tenga que pedirla.</strong>
@@ -325,6 +330,11 @@ export default function Home() {
           <div className={styles.sectionIntro}>
             <p className={styles.eyebrow}>Para quién construimos</p>
             <h2>Una infraestructura. Distintos contextos deportivos.</h2>
+          </div>
+
+          <div className={styles.ecosystemVisual}>
+            <img src="/img/athlete-journey.jpg" alt="Entorno deportivo donde personas y organizaciones comparten contexto" />
+            <div><span>Una infraestructura compartida</span><strong>El contexto cambia. La necesidad de información confiable, trazable y preparada permanece.</strong></div>
           </div>
 
           <div className={styles.audienceGrid}>
