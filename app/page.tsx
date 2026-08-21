@@ -227,6 +227,11 @@ export default function Home() {
           <p className={styles.coreOsNote}>
             La tecnología, metodología y arquitectura que conectan estas capacidades forman parte del Core OS de TalentDrop.
           </p>
+          <div className={styles.infrastructureSignal} aria-hidden="true">
+            <span />
+            <span />
+            <span />
+          </div>
         </div>
       </section>
 
@@ -249,6 +254,13 @@ export default function Home() {
                   <strong>{item}</strong>
                 </div>
               ))}
+            </div>
+            <div className={styles.diagnosticSignal} aria-hidden="true">
+              <span />
+              <span />
+              <span />
+              <span />
+              <span />
             </div>
           </div>
         </div>

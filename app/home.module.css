@@ -1932,3 +1932,1237 @@
     color: #07182d !important;
   }
 }
+
+
+/* =========================================================
+   V3.6 — TALENTDROP DESIGN SYSTEM 1.0
+   Authority · Infrastructure · Precision · Contrast · Evidence · Restraint
+   ========================================================= */
+
+:root {
+  --td-display: var(--font-space-grotesk), "Inter", system-ui, sans-serif;
+  --td-body: var(--font-inter), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+  --td-black: #0b0f17;
+  --td-night: #07111f;
+  --td-navy: #0b1d33;
+  --td-panel: #161e2e;
+  --td-steel: #27445f;
+  --td-electric: #1769ff;
+  --td-emerald: #10b981;
+  --td-stone: #eeece7;
+  --td-offwhite: #f6f5f1;
+  --td-line-dark: rgba(255,255,255,.10);
+  --td-line-light: rgba(7,24,45,.13);
+}
+
+/* ---------- TYPE SYSTEM ---------- */
+
+.page {
+  font-family: var(--td-body);
+  font-feature-settings: "ss01" 1, "cv05" 1, "cv11" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero h1,
+.sectionIntro h2,
+.splitHeading h2,
+.darkIntro h2,
+.journeyCard h2,
+.library h2,
+.categoryCard h2,
+.finalGrid h2,
+.challengeContent h2,
+.audienceCard h3,
+.capability h3,
+.knowledgeCard h3 {
+  font-family: var(--td-display);
+}
+
+.hero h1 {
+  max-width: 790px;
+  font-size: clamp(50px, 5.5vw, 76px);
+  line-height: .98;
+  letter-spacing: -.058em;
+  font-weight: 560;
+}
+
+.heroLead {
+  max-width: 650px;
+  font-size: 17px;
+  line-height: 1.7;
+  letter-spacing: -.008em;
+}
+
+.heroLead strong {
+  font-weight: 700;
+  color: #132a44;
+}
+
+.kicker,
+.eyebrow,
+.eyebrowLight,
+.cardEyebrow,
+.panelLabel {
+  font-family: var(--td-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .15em;
+}
+
+.sectionIntro h2,
+.splitHeading h2,
+.challengeContent h2,
+.journeyCard h2,
+.library h2,
+.categoryCard h2,
+.finalGrid h2 {
+  font-weight: 540;
+  letter-spacing: -.047em;
+}
+
+.challengeLead,
+.libraryLead,
+.splitHeading > p,
+.finalGrid > div p {
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.capability p,
+.audienceCard > p:not(.cardEyebrow) {
+  font-size: 14px;
+  line-height: 1.68;
+}
+
+/* ---------- GRID / RHYTHM ---------- */
+
+.container {
+  width: min(1210px, calc(100% - 64px));
+}
+
+.headerInner {
+  width: min(1280px, calc(100% - 64px));
+  min-height: 72px;
+}
+
+.nav {
+  gap: 28px;
+  font-size: 13px;
+}
+
+.hero {
+  padding: 104px 0 120px;
+}
+
+.heroGrid {
+  grid-template-columns: 1.04fr .96fr;
+  gap: 92px;
+}
+
+.thesis,
+.capabilities,
+.audiences,
+.knowledge,
+.library,
+.finalCta {
+  padding: 128px 0;
+}
+
+.splitHeading {
+  gap: 112px;
+}
+
+.capabilityList,
+.audienceGrid,
+.knowledgeGrid {
+  margin-top: 72px;
+}
+
+/* ---------- LIGHT / DARK CHAPTER RHYTHM ---------- */
+
+.hero {
+  background: var(--td-offwhite);
+}
+
+.thesis {
+  background: #ffffff;
+}
+
+.capabilities {
+  background: #e8edf2;
+}
+
+.journey,
+.knowledge,
+.category {
+  background: var(--td-black);
+}
+
+.library {
+  background: var(--td-stone);
+}
+
+.audiences {
+  background: #dde4ea;
+}
+
+.finalCta {
+  background: var(--td-offwhite);
+}
+
+/* ---------- HEADER ---------- */
+
+.header {
+  position: sticky;
+  top: 0;
+  background: rgba(246,245,241,.90);
+  border-bottom: 1px solid rgba(7,24,45,.09);
+  box-shadow: 0 1px 0 rgba(255,255,255,.75) inset;
+}
+
+.brand {
+  font-family: var(--td-display);
+  font-weight: 620;
+}
+
+.brandMark {
+  border-radius: 7px;
+  background: var(--td-night);
+}
+
+.headerCta {
+  border: 1px solid rgba(255,255,255,.08);
+  background: var(--td-night);
+  transition:
+    transform 180ms ease,
+    background-color 180ms ease,
+    border-color 180ms ease;
+}
+
+.headerCta:hover {
+  transform: translateY(-1px);
+  background: #102845;
+  border-color: rgba(23,105,255,.32);
+}
+
+/* ---------- BUTTON SYSTEM ---------- */
+
+.primaryButton,
+.secondaryButton {
+  min-height: 50px;
+  border-radius: 8px;
+  font-size: 13px;
+  letter-spacing: -.005em;
+}
+
+.primaryButton {
+  background: var(--td-electric);
+  box-shadow: none;
+}
+
+.primaryButton span,
+.audienceCard a,
+.knowledgeCard a,
+.categoryCard a {
+  display: inline-block;
+  transition: transform 180ms ease;
+}
+
+.primaryButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 26px rgba(23,105,255,.20);
+}
+
+.primaryButton:hover span,
+.audienceCard a:hover,
+.knowledgeCard a:hover,
+.categoryCard a:hover {
+  transform: translateX(4px);
+}
+
+.secondaryButton {
+  background: rgba(255,255,255,.72);
+  border-color: rgba(7,24,45,.16);
+}
+
+.secondaryButton:hover {
+  background: #ffffff;
+  border-color: rgba(7,24,45,.28);
+}
+
+/* ---------- HERO: PHOTO + DECISION INFRASTRUCTURE ---------- */
+
+.heroVisual {
+  border-radius: 14px;
+  border: 1px solid rgba(7,24,45,.14);
+  box-shadow: 0 24px 60px rgba(7,24,45,.14);
+}
+
+.heroVisual img {
+  filter: saturate(.82) contrast(1.04);
+}
+
+.heroVisualBadge {
+  backdrop-filter: blur(14px);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.heroSystem {
+  margin-top: 72px;
+  padding: 18px;
+  border-radius: 14px;
+  background:
+    linear-gradient(rgba(255,255,255,.025), rgba(255,255,255,.025)),
+    var(--td-black);
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: 0 25px 70px rgba(11,15,23,.24);
+}
+
+.heroSystem::before {
+  display: none;
+}
+
+.systemHeader {
+  min-height: 42px;
+  padding: 2px 5px 14px;
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+
+.systemFlow {
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1px;
+  margin-top: 1px;
+  background: rgba(255,255,255,.09);
+  border-radius: 9px;
+  overflow: hidden;
+}
+
+.systemStep,
+.systemStep:nth-child(1),
+.systemStep:nth-child(2),
+.systemStep:nth-child(3),
+.systemStep:nth-child(4),
+.systemStep:nth-child(5) {
+  min-height: 162px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 19px;
+  border: 0;
+  border-radius: 0;
+  background: #121b29;
+  box-shadow: none;
+}
+
+.systemStep:nth-child(2) { background: #152235; }
+.systemStep:nth-child(3) { background: #112b31; }
+.systemStep:nth-child(4) { background: #17283a; }
+.systemStep:nth-child(5) { background: #123b84; }
+
+.systemStep::before {
+  width: 100%;
+  height: 2px;
+  inset: 0 0 auto;
+  background: rgba(255,255,255,.13);
+}
+
+.systemStep:nth-child(3)::before {
+  background: var(--td-emerald);
+}
+
+.systemStep:nth-child(5)::before {
+  background: #6fa1ff;
+}
+
+.systemStep > div {
+  margin-top: auto;
+}
+
+.systemStep strong {
+  font-family: var(--td-display);
+  font-size: 16px;
+  font-weight: 520;
+}
+
+.systemStep p {
+  margin-top: 8px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.stepNumber {
+  color: #8798aa;
+  font-variant-numeric: tabular-nums;
+}
+
+.stepSignal {
+  position: absolute;
+  right: 17px;
+  top: 18px;
+}
+
+.systemFooter {
+  justify-content: flex-end;
+  padding: 16px 5px 3px;
+  font-size: 11px;
+  color: #aab8c7;
+}
+
+/* ---------- CHALLENGE ---------- */
+
+.challengeGrid {
+  align-items: stretch;
+}
+
+.challengePhoto {
+  border-radius: 12px;
+  box-shadow: none;
+  border: 1px solid rgba(7,24,45,.12);
+}
+
+.challengeList {
+  border-top: 1px solid rgba(7,24,45,.16);
+}
+
+.challengeList > div,
+.challengeList > div:nth-child(2),
+.challengeList > div:nth-child(3) {
+  padding: 22px 0;
+  background: transparent;
+  border-bottom: 1px solid rgba(7,24,45,.12);
+}
+
+.challengeList > div > span {
+  font-variant-numeric: tabular-nums;
+  color: #73869a;
+}
+
+/* ---------- HOW IT WORKS: DATA RAIL ---------- */
+
+.decisionFlowLight {
+  margin-top: 88px;
+  border-radius: 12px;
+  box-shadow: none;
+  border: 1px solid rgba(255,255,255,.10);
+}
+
+.decisionItemLight {
+  min-height: 210px;
+  padding: 24px;
+}
+
+.decisionItemLight h3 {
+  font-family: var(--td-display);
+  font-weight: 520;
+}
+
+.decisionItemLight::after {
+  left: 24px;
+  right: 24px;
+  bottom: 20px;
+  height: 1px;
+}
+
+.decisionItemLight:hover {
+  filter: brightness(1.075);
+}
+
+/* ---------- CORE OS: THREE PUBLIC CAPABILITIES ---------- */
+
+.capabilityList {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  border-top: 0;
+}
+
+.capability,
+.capability:nth-child(1),
+.capability:nth-child(2),
+.capability:nth-child(3) {
+  display: flex;
+  flex-direction: column;
+  min-height: 330px;
+  padding: 30px;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 12px;
+  background: var(--td-night);
+  box-shadow: none;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease;
+}
+
+.capability:nth-child(2) {
+  background: #12314b;
+}
+
+.capability:nth-child(3) {
+  background: #102c31;
+}
+
+.capability::before {
+  content: "";
+  position: absolute;
+  left: 30px;
+  right: 30px;
+  bottom: 30px;
+  height: 46px;
+  background:
+    linear-gradient(90deg, rgba(255,255,255,.10) 1px, transparent 1px) 0 0 / 28px 100%,
+    linear-gradient(rgba(255,255,255,.08) 1px, transparent 1px) 0 0 / 100% 15px;
+  opacity: .45;
+  pointer-events: none;
+}
+
+.capability::after {
+  width: 3px;
+  top: 30px;
+  right: 30px;
+  bottom: auto;
+  height: 28px;
+  background: #6584a2;
+}
+
+.capability:nth-child(2)::after {
+  background: var(--td-electric);
+}
+
+.capability:nth-child(3)::after {
+  background: var(--td-emerald);
+}
+
+.capability:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255,255,255,.20);
+}
+
+.capability > span {
+  margin-bottom: 76px;
+  padding-top: 0;
+  font-variant-numeric: tabular-nums;
+  color: #8fa2b5 !important;
+}
+
+.capability h3 {
+  margin-bottom: 18px;
+  font-size: 25px;
+  font-weight: 520;
+}
+
+.capability p {
+  max-width: 330px;
+}
+
+.coreOsNote {
+  max-width: 690px;
+  margin-top: 30px;
+  padding-top: 20px;
+  font-size: 13px;
+  font-weight: 520;
+}
+
+/* Conceptual signal only: communicates infrastructure without exposing implementation */
+.infrastructureSignal {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 220px;
+  gap: 8px;
+  margin-top: 32px;
+}
+
+.infrastructureSignal span {
+  height: 3px;
+  border-radius: 999px;
+  background: #6c8297;
+}
+
+.infrastructureSignal span:nth-child(2) {
+  background: var(--td-electric);
+}
+
+.infrastructureSignal span:nth-child(3) {
+  background: var(--td-emerald);
+}
+
+/* ---------- DIAGNOSTIC ENGINE ---------- */
+
+.journey {
+  padding: 122px 0;
+}
+
+.journeyCard {
+  position: relative;
+  padding: 70px;
+  border-radius: 14px;
+  background: #111a28;
+  border: 1px solid rgba(255,255,255,.10);
+  box-shadow: none;
+}
+
+.journeyCard::before {
+  top: 70px;
+  right: 70px;
+  color: #72879c;
+  letter-spacing: .17em;
+}
+
+.journeyCard::after {
+  display: none;
+}
+
+.journeyCard h2 {
+  max-width: 850px;
+}
+
+.journeyTrack {
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  margin-top: 60px;
+  padding-top: 0;
+  background: rgba(255,255,255,.09);
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.journeyStep,
+.journeyStep:nth-child(1),
+.journeyStep:nth-child(2),
+.journeyStep:nth-child(3),
+.journeyStep:nth-child(4),
+.journeyStep:nth-child(5),
+.journeyStep:nth-child(6) {
+  min-height: 170px;
+  padding: 22px 18px;
+  border: 0;
+  border-radius: 0;
+  background: #151f2d;
+}
+
+.journeyStep:nth-child(3) {
+  background: #102b30;
+}
+
+.journeyStep:nth-child(4) {
+  background: #17283a;
+}
+
+.journeyStep:nth-child(5) {
+  background: #213346;
+}
+
+.journeyStep:nth-child(6) {
+  background: #123b84;
+}
+
+.journeyStep::before {
+  display: none;
+}
+
+.journeyStep span {
+  width: auto;
+  height: auto;
+  margin-bottom: 74px;
+  background: transparent !important;
+  font-size: 10px;
+  color: #899aac !important;
+}
+
+.journeyStep strong {
+  font-family: var(--td-display);
+  font-size: 15px;
+  font-weight: 520;
+}
+
+/* abstract status markers; no implementation detail */
+.diagnosticSignal {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 24px;
+}
+
+.diagnosticSignal span {
+  width: 7px;
+  height: 7px;
+  border: 1px solid #647c94;
+  border-radius: 50%;
+}
+
+.diagnosticSignal span:nth-child(4) {
+  border-color: var(--td-emerald);
+  background: var(--td-emerald);
+}
+
+.diagnosticSignal span:nth-child(5) {
+  border-color: var(--td-electric);
+  background: var(--td-electric);
+}
+
+/* ---------- DIAGNOSTIC OUTPUT ---------- */
+
+.libraryGrid {
+  gap: 108px;
+}
+
+.libraryPanel {
+  border-radius: 12px;
+  background: var(--td-night);
+  box-shadow: none;
+}
+
+.libraryPanel::before {
+  width: 3px;
+}
+
+.libraryPanel dl > div {
+  padding: 18px 0;
+  border-top-color: rgba(255,255,255,.10);
+}
+
+.libraryPanel dl > div:last-child {
+  background: #123b84;
+  border-radius: 7px;
+}
+
+.areaCloud span {
+  padding: 9px 12px;
+  border-radius: 6px;
+  background: #d8c7a3;
+}
+
+/* ---------- AUDIENCES ---------- */
+
+.audienceGrid {
+  gap: 12px;
+}
+
+.audienceCard {
+  min-height: 345px;
+  padding: 34px;
+  border-radius: 12px;
+  box-shadow: none;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    filter 180ms ease;
+}
+
+.audienceCard:hover {
+  transform: translateY(-3px);
+  box-shadow: none;
+  filter: brightness(1.045);
+}
+
+.audienceCard h3 {
+  font-size: 26px;
+  font-weight: 520;
+}
+
+.audienceCard a {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  margin-top: auto;
+  padding-top: 22px;
+}
+
+/* ---------- KNOWLEDGE: EDITORIAL, NOT CARDS FOR CARDS' SAKE ---------- */
+
+.knowledge {
+  background: var(--td-black);
+}
+
+.knowledgeGrid {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 10px;
+  background: rgba(255,255,255,.10);
+}
+
+.knowledgeCard,
+.knowledgeCard:nth-child(1),
+.knowledgeCard:nth-child(2),
+.knowledgeCard:nth-child(3) {
+  min-height: 280px;
+  padding: 30px;
+  border: 0;
+  border-radius: 0;
+  background: #111a28;
+}
+
+.knowledgeCard:nth-child(2) {
+  background: #10282d;
+}
+
+.knowledgeCard:nth-child(3) {
+  background: #17283a;
+}
+
+.knowledgeCard h3 {
+  font-size: 23px;
+  font-weight: 520;
+}
+
+.knowledgeCard a {
+  width: fit-content;
+}
+
+/* ---------- CATEGORY ---------- */
+
+.categoryCard {
+  padding: 86px;
+  border-radius: 0 0 14px 14px;
+  box-shadow: none;
+}
+
+.categoryCard h2 {
+  font-size: clamp(44px, 5vw, 68px);
+}
+
+/* ---------- MICRO-INTERACTIONS: restrained ---------- */
+
+@media (hover: hover) and (pointer: fine) {
+  .nav a {
+    position: relative;
+  }
+
+  .nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 100%;
+    bottom: -7px;
+    height: 1px;
+    background: currentColor;
+    transition: right 180ms ease;
+  }
+
+  .nav a:hover::after {
+    right: 0;
+  }
+}
+
+/* Progressive reveal when supported. No JS, no layout shift. */
+@supports (animation-timeline: view()) {
+  .challengeGrid,
+  .decisionFlowLight,
+  .splitHeading,
+  .capabilityList,
+  .journeyCard,
+  .libraryGrid,
+  .audienceGrid,
+  .knowledgeGrid,
+  .categoryCard,
+  .finalGrid {
+    animation: td-reveal linear both;
+    animation-timeline: view();
+    animation-range: entry 5% cover 24%;
+  }
+
+  @keyframes td-reveal {
+    from {
+      opacity: .3;
+      transform: translateY(18px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* ---------- RESPONSIVE ---------- */
+
+@media (max-width: 980px) {
+  .container,
+  .headerInner {
+    width: min(100% - 40px, 1210px);
+  }
+
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: 54px;
+  }
+
+  .systemFlow {
+    grid-template-columns: 1fr;
+    gap: 1px;
+  }
+
+  .systemStep,
+  .systemStep:nth-child(1),
+  .systemStep:nth-child(2),
+  .systemStep:nth-child(3),
+  .systemStep:nth-child(4),
+  .systemStep:nth-child(5) {
+    min-height: 104px;
+  }
+
+  .capabilityList {
+    grid-template-columns: 1fr;
+  }
+
+  .capability {
+    min-height: 260px;
+  }
+
+  .journeyTrack {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 680px) {
+  .container,
+  .headerInner {
+    width: min(100% - 28px, 1210px);
+  }
+
+  .hero {
+    padding: 70px 0 88px;
+  }
+
+  .hero h1 {
+    font-size: 43px;
+    line-height: 1.01;
+    letter-spacing: -.048em;
+  }
+
+  .heroLead {
+    font-size: 16px;
+  }
+
+  .heroSystem {
+    margin-top: 52px;
+  }
+
+  .thesis,
+  .capabilities,
+  .audiences,
+  .knowledge,
+  .library,
+  .finalCta {
+    padding: 88px 0;
+  }
+
+  .capability {
+    min-height: 245px;
+    padding: 26px;
+  }
+
+  .capability > span {
+    margin-bottom: 52px;
+  }
+
+  .journey {
+    padding: 82px 0;
+  }
+
+  .journeyCard {
+    padding: 36px 22px;
+  }
+
+  .journeyTrack {
+    grid-template-columns: 1fr;
+  }
+
+  .journeyStep,
+  .journeyStep:nth-child(1),
+  .journeyStep:nth-child(2),
+  .journeyStep:nth-child(3),
+  .journeyStep:nth-child(4),
+  .journeyStep:nth-child(5),
+  .journeyStep:nth-child(6) {
+    min-height: 108px;
+  }
+
+  .journeyStep span {
+    margin-bottom: 32px;
+  }
+
+  .knowledgeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .categoryCard {
+    padding: 54px 28px;
+  }
+}
+
+
+/* =========================================================
+   V3.7 — PREMIUM DEPTH
+   Premium SaaS finish without exposing product architecture.
+   ========================================================= */
+
+:root {
+  --td-cobalt: #1e40af;
+  --td-cobalt-bright: #2457d6;
+  --td-mint: #10b981;
+  --td-page-soft: #f8fafc;
+  --td-glass-light: rgba(255,255,255,.72);
+  --td-glass-dark: rgba(22,30,46,.74);
+}
+
+/* 1. DEPTH / MESH SURFACES */
+.hero {
+  background:
+    radial-gradient(circle at 82% 18%, rgba(30,64,175,.10), transparent 31%),
+    radial-gradient(circle at 18% 76%, rgba(16,185,129,.045), transparent 26%),
+    #f8fafc;
+}
+
+.capabilities {
+  background:
+    radial-gradient(circle at 12% 20%, rgba(30,64,175,.09), transparent 28%),
+    radial-gradient(circle at 88% 82%, rgba(16,185,129,.055), transparent 26%),
+    #edf2f6;
+}
+
+.library {
+  background:
+    radial-gradient(circle at 76% 18%, rgba(30,64,175,.065), transparent 28%),
+    #f3f1ec;
+}
+
+.audiences {
+  background:
+    radial-gradient(circle at 15% 78%, rgba(16,185,129,.05), transparent 24%),
+    radial-gradient(circle at 82% 18%, rgba(30,64,175,.08), transparent 29%),
+    #e7edf2;
+}
+
+.journey,
+.knowledge,
+.category {
+  background:
+    radial-gradient(circle at 78% 18%, rgba(36,87,214,.15), transparent 28%),
+    radial-gradient(circle at 16% 80%, rgba(16,185,129,.055), transparent 24%),
+    #0b0f17;
+}
+
+/* Premium glass, used selectively */
+.heroVisualBadge,
+.libraryPanel,
+.audienceCard,
+.knowledgeCard {
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.heroVisualBadge {
+  background: rgba(11,15,23,.72);
+}
+
+.libraryPanel {
+  background: rgba(7,17,31,.92);
+}
+
+/* Audience surfaces float subtly */
+.audienceCard:nth-child(1) { background: rgba(7,24,45,.94); }
+.audienceCard:nth-child(2) { background: rgba(18,61,103,.92); }
+.audienceCard:nth-child(3) { background: rgba(9,63,73,.92); }
+.audienceCard:nth-child(4) { background: rgba(216,199,163,.88); }
+
+/* 2. TYPOGRAPHIC AUTHORITY */
+.hero h1 {
+  font-weight: 680;
+  letter-spacing: -.062em;
+  line-height: .97;
+}
+
+.sectionIntro h2,
+.splitHeading h2,
+.challengeContent h2,
+.journeyCard h2,
+.library h2,
+.categoryCard h2,
+.finalGrid h2 {
+  font-weight: 650;
+  letter-spacing: -.052em;
+}
+
+.capability h3,
+.audienceCard h3,
+.knowledgeCard h3 {
+  font-weight: 650;
+  letter-spacing: -.035em;
+}
+
+.heroLead,
+.challengeLead,
+.libraryLead,
+.splitHeading > p,
+.finalGrid > div p {
+  line-height: 1.78;
+}
+
+/* 3. UI ELEVATION */
+.capability,
+.audienceCard,
+.knowledgeCard,
+.libraryPanel {
+  transition:
+    transform 220ms cubic-bezier(.2,.8,.2,1),
+    box-shadow 220ms ease,
+    border-color 220ms ease,
+    filter 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .capability:hover,
+  .audienceCard:hover,
+  .knowledgeCard:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 22px 44px rgba(7,24,45,.13);
+    border-color: rgba(36,87,214,.42);
+  }
+
+  .libraryPanel:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 24px 48px rgba(7,24,45,.17);
+    border-color: rgba(36,87,214,.38);
+  }
+}
+
+/* Functional accent: cobalt replaces over-bright electric blue */
+.primaryButton {
+  background: var(--td-cobalt);
+}
+
+.primaryButton:hover {
+  background: #17358f;
+  box-shadow: 0 12px 28px rgba(30,64,175,.24);
+}
+
+.infrastructureSignal span:nth-child(2),
+.diagnosticSignal span:nth-child(5) {
+  background: var(--td-cobalt-bright);
+  border-color: var(--td-cobalt-bright);
+}
+
+.infrastructureSignal span:nth-child(3),
+.diagnosticSignal span:nth-child(4) {
+  background: var(--td-mint);
+  border-color: var(--td-mint);
+}
+
+/* Cards: thin premium edges */
+.capability,
+.audienceCard,
+.knowledgeCard,
+.libraryPanel,
+.journeyCard,
+.heroSystem {
+  border-width: 1px;
+}
+
+.capability {
+  border-color: rgba(255,255,255,.12);
+}
+
+.knowledgeGrid {
+  border-color: rgba(255,255,255,.12);
+}
+
+/* 4. PROCESS / DATA VISUAL REFINEMENT
+   Keep numbered sequence: it communicates operating progression better
+   than decorative icons and protects the infrastructure narrative. */
+.stepNumber,
+.journeyStep span,
+.capability > span {
+  font-family: var(--td-body);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .08em;
+}
+
+.systemStep,
+.journeyStep {
+  transition:
+    background-color 220ms ease,
+    filter 220ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .systemStep:hover,
+  .journeyStep:hover {
+    filter: brightness(1.10);
+  }
+}
+
+/* More polished progress/data rails */
+.capability::before {
+  border-radius: 8px;
+  mask-image: linear-gradient(90deg, #000 0%, #000 78%, transparent 100%);
+}
+
+.systemStep::before,
+.decisionItemLight::after {
+  border-radius: 999px;
+}
+
+/* 5. CATEGORY / CTA DEPTH */
+.categoryCard {
+  background:
+    radial-gradient(circle at 82% 20%, rgba(255,255,255,.14), transparent 28%),
+    linear-gradient(135deg, #17358f 0%, #1e40af 56%, #2457d6 100%);
+  border: 1px solid rgba(255,255,255,.14);
+}
+
+.finalCta {
+  background:
+    radial-gradient(circle at 84% 30%, rgba(30,64,175,.07), transparent 26%),
+    #f8fafc;
+}
+
+/* 6. ACCESSIBLE MOTION / POLISH */
+@media (hover: hover) and (pointer: fine) {
+  .primaryButton,
+  .secondaryButton,
+  .headerCta {
+    will-change: transform;
+  }
+}
+
+/* Mobile: retain institutional legibility */
+@media (max-width: 680px) {
+  .hero h1 {
+    font-size: 42px;
+    line-height: 1.02;
+    letter-spacing: -.052em;
+  }
+
+  .heroLead,
+  .challengeLead,
+  .libraryLead,
+  .splitHeading > p,
+  .finalGrid > div p {
+    line-height: 1.72;
+  }
+
+  .capability:hover,
+  .audienceCard:hover,
+  .knowledgeCard:hover,
+  .libraryPanel:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}
