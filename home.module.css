@@ -7,9 +7,7 @@
   --td-line: #dfe7f0;
   --td-soft: #f5f8fb;
   --td-white: #ffffff;
-}
 
-.page {
   min-height: 100vh;
   overflow: hidden;
   background: #fff;
@@ -108,7 +106,11 @@
   width: 700px;
   height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(35, 102, 243, 0.16), transparent 68%);
+  background: radial-gradient(
+    circle,
+    rgba(35, 102, 243, 0.16),
+    transparent 68%
+  );
   pointer-events: none;
 }
 
