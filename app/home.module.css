@@ -1329,3 +1329,403 @@
   .capability { grid-template-columns: 36px 1fr; padding: 24px 20px; }
   .capability p { grid-column: 2; }
 }
+
+
+/* =========================================================
+   V3.4 — VISUAL SYSTEM 10/10
+   Editorial authority + product depth + controlled contrast
+   Content and information architecture remain unchanged.
+   ========================================================= */
+
+:root {
+  --td-ink-950: #04111f;
+  --td-navy-900: #07182d;
+  --td-navy-800: #0b2948;
+  --td-blue-700: #1457d9;
+  --td-blue-600: #1769ff;
+  --td-steel-700: #294f73;
+  --td-petrol-800: #093f49;
+  --td-petrol-700: #0d5660;
+  --td-bronze-700: #72552b;
+  --td-sand-300: #d8c7a3;
+  --td-stone-100: #eeeae2;
+  --td-cloud-100: #e9eef3;
+}
+
+/* Global rhythm: surfaces must read as chapters, not one endless white page */
+.hero { background: #f4f1ea; }
+.thesis { background: #ffffff; }
+.capabilities { background: #e9eef3; }
+.library { background: #eeeae2; }
+.audiences { background: #dfe6ec; }
+.finalCta { background: #f4f1ea; }
+
+.header {
+  border-bottom-color: rgba(7,24,45,.13);
+  background: rgba(244,241,234,.94);
+}
+
+.headerCta {
+  background: #07182d;
+  box-shadow: 0 8px 20px rgba(7,24,45,.14);
+}
+
+/* Hero: editorial left + genuine infrastructure console right */
+.heroGlow {
+  width: 760px;
+  height: 760px;
+  top: -330px;
+  right: -220px;
+  background: radial-gradient(circle, rgba(23,105,255,.12), transparent 66%);
+}
+
+.heroVisual {
+  border: 1px solid rgba(7,24,45,.14);
+  box-shadow: 0 30px 70px rgba(7,24,45,.18);
+}
+
+.heroSystem {
+  padding: 22px;
+  border-radius: 22px;
+  border: 1px solid rgba(132,174,224,.22);
+  background: #04111f;
+  box-shadow: 0 38px 90px rgba(4,17,31,.32);
+}
+.heroSystem::before {
+  inset: 14px -14px -14px 14px;
+  border-radius: 22px;
+  background: #0b2948;
+  border-color: rgba(23,105,255,.22);
+}
+
+.systemHeader {
+  padding: 7px 7px 20px;
+  font-size: 12px;
+  letter-spacing: .015em;
+}
+
+.systemFlow { gap: 10px; }
+
+.systemStep {
+  position: relative;
+  min-height: 78px;
+  padding: 17px 18px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.09);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+}
+.systemStep::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  background: rgba(255,255,255,.22);
+}
+.systemStep:nth-child(1) { background: #102f4e; }
+.systemStep:nth-child(2) { background: #123d67; }
+.systemStep:nth-child(3) { background: #093f49; }
+.systemStep:nth-child(4) { background: #294f73; }
+.systemStep:nth-child(5) {
+  background: #1457d9;
+  border-color: rgba(164,196,255,.32);
+}
+.systemStep:nth-child(5)::before { background: #fff; }
+.systemStep strong { font-size: 15px; }
+.systemStep p { font-size: 12px; color: #b8c8d8; }
+.stepSignal {
+  width: 9px;
+  height: 9px;
+  background: #9db9d5;
+  box-shadow: 0 0 0 4px rgba(157,185,213,.12);
+}
+.systemStep:nth-child(5) .stepSignal {
+  background: #fff;
+  box-shadow: 0 0 0 5px rgba(255,255,255,.15);
+}
+.systemFooter {
+  margin-top: 4px;
+  padding: 18px 8px 5px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  color: #aabed1;
+}
+
+/* Challenge: retain humanity, increase editorial contrast */
+.challengePhoto {
+  box-shadow: 0 28px 60px rgba(7,24,45,.16);
+}
+.challengeList > div {
+  border-color: #d5dde5;
+}
+.challengeList > div:nth-child(2) {
+  background: #f1f4f7;
+}
+.challengeList > div:nth-child(3) {
+  background: #e8eef4;
+}
+
+/* How it works: one infrastructure rail, not five unrelated colored boxes */
+.decisionFlowLight {
+  gap: 0;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #07182d;
+  box-shadow: 0 28px 65px rgba(7,24,45,.19);
+}
+.decisionItemLight {
+  position: relative;
+  min-height: 230px;
+  border-right: 1px solid rgba(255,255,255,.12);
+  background: #0b2948 !important;
+}
+.decisionItemLight:nth-child(2) { background: #103657 !important; }
+.decisionItemLight:nth-child(3) { background: #093f49 !important; }
+.decisionItemLight:nth-child(4) { background: #294f73 !important; }
+.decisionItemLight:nth-child(5) { background: #1457d9 !important; }
+.decisionItemLight::after {
+  content: "";
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 22px;
+  height: 2px;
+  background: rgba(255,255,255,.15);
+}
+.decisionItemLight:nth-child(5)::after { background: rgba(255,255,255,.7); }
+
+/* Core OS: stronger architecture. Each layer has weight but stays in one family */
+.capabilities {
+  border-top: 1px solid #d7e0e8;
+  border-bottom: 1px solid #d7e0e8;
+}
+.capabilityList {
+  gap: 10px;
+}
+.capability {
+  position: relative;
+  overflow: hidden;
+  min-height: 150px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 13px 28px rgba(7,24,45,.09);
+}
+.capability::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 7px;
+  background: rgba(255,255,255,.13);
+}
+.capability:nth-child(1) { background: #07182d; }
+.capability:nth-child(2) { background: #102f4e; }
+.capability:nth-child(3) { background: #123d67; }
+.capability:nth-child(4) { background: #093f49; }
+.capability:nth-child(5) { background: #294f73; }
+.capability:nth-child(5)::after { background: #1769ff; }
+.capability h3 { font-size: 25px; }
+.capability p { color: #c7d4e0; }
+
+/* Diagnostic Engine: hero product moment */
+.journey {
+  padding: 96px 0 136px;
+  background: #04111f;
+}
+.journeyCard {
+  padding: 78px;
+  border-radius: 26px;
+  border: 1px solid rgba(125,166,214,.2);
+  background: #07182d;
+  box-shadow: 0 38px 90px rgba(0,0,0,.3);
+}
+.journeyCard::before {
+  content: "SYSTEM / DIAGNOSTIC";
+  position: absolute;
+  right: 72px;
+  top: 76px;
+  z-index: 2;
+  color: #7796b4;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .16em;
+}
+.journeyCard::after {
+  width: 640px;
+  height: 640px;
+  right: -390px;
+  top: -390px;
+  border-color: rgba(23,105,255,.28);
+  box-shadow: 0 0 0 90px rgba(23,105,255,.035),0 0 0 180px rgba(23,105,255,.018);
+}
+.journeyTrack {
+  gap: 8px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.journeyStep {
+  min-height: 205px;
+  padding: 24px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.035);
+}
+.journeyStep:nth-child(1) { background: #102f4e; }
+.journeyStep:nth-child(2) { background: #123d67; }
+.journeyStep:nth-child(3) { background: #093f49; }
+.journeyStep:nth-child(4) { background: #294f73; }
+.journeyStep:nth-child(5) { background: #72552b; }
+.journeyStep:nth-child(6) {
+  background: #1457d9;
+  border-color: rgba(255,255,255,.18);
+}
+.journeyStep span {
+  display: inline-flex;
+  width: 34px;
+  height: 34px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255,255,255,.08);
+  color: #d2deea;
+}
+.journeyStep:nth-child(6) span { background: rgba(255,255,255,.16); color: #fff; }
+.journeyStep strong {
+  font-size: 16px;
+  letter-spacing: -.015em;
+}
+
+/* Diagnostic output: looks like an actual system output */
+.libraryGrid { gap: 92px; }
+.libraryPanel {
+  position: relative;
+  overflow: hidden;
+  padding: 42px;
+  border-radius: 20px;
+  background: #07182d;
+  border: 1px solid #173b61;
+  box-shadow: 0 30px 70px rgba(7,24,45,.22);
+}
+.libraryPanel::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 6px;
+  background: #1769ff;
+}
+.libraryPanel h3 { font-size: 28px; }
+.libraryPanel dl > div {
+  grid-template-columns: 112px 1fr;
+  padding: 20px 0;
+}
+.libraryPanel dl > div:last-child {
+  margin: 12px -18px -14px;
+  padding: 20px 18px;
+  border-radius: 10px;
+  background: #1457d9;
+  border-top: 0;
+}
+.libraryPanel dl > div:last-child dt,
+.libraryPanel dl > div:last-child dd { color: #fff; }
+
+.areaCloud { gap: 8px; }
+.areaCloud span {
+  background: #d8c7a3;
+  border-color: #c6b287;
+  color: #07182d;
+  font-weight: 800;
+}
+
+/* Ecosystem: four contexts with real differentiation and controlled materiality */
+.ecosystemVisual {
+  box-shadow: 0 28px 65px rgba(7,24,45,.18);
+}
+.audienceGrid { gap: 12px; }
+.audienceCard {
+  min-height: 360px;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,.08);
+  box-shadow: 0 18px 38px rgba(7,24,45,.11);
+}
+.audienceCard:nth-child(1) { background: #07182d; }
+.audienceCard:nth-child(2) { background: #123d67; }
+.audienceCard:nth-child(3) { background: #093f49; }
+.audienceCard:nth-child(4) {
+  background: #d8c7a3;
+  border-color: #c8b68e;
+}
+.audienceCard:nth-child(-n+3) .cardEyebrow { color: #9fc1ff; }
+.audienceCard:nth-child(-n+3) a {
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+.audienceCard:nth-child(4) a {
+  border-top: 1px solid rgba(7,24,45,.16);
+}
+
+/* Knowledge: editorial library, not SaaS tiles */
+.knowledge {
+  background: #04111f;
+  border-top: 1px solid rgba(255,255,255,.05);
+}
+.knowledgeGrid { gap: 10px; }
+.knowledgeCard {
+  min-height: 280px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.1);
+  box-shadow: none;
+}
+.knowledgeCard:nth-child(1) { background: #07182d; }
+.knowledgeCard:nth-child(2) { background: #093f49; }
+.knowledgeCard:nth-child(3) { background: #294f73; }
+.knowledgeCard h3 {
+  max-width: 320px;
+  font-size: 24px;
+}
+.knowledgeCard a {
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+
+/* Category: signature block */
+.category { background: #04111f; padding-top: 0; }
+.categoryCard {
+  border-radius: 0 0 28px 28px;
+  background: #1457d9;
+  box-shadow: 0 30px 70px rgba(4,17,31,.24);
+}
+.categoryCard::after {
+  border-color: rgba(255,255,255,.28);
+  box-shadow: 0 0 0 70px rgba(255,255,255,.035),0 0 0 140px rgba(255,255,255,.02);
+}
+.categoryCard .eyebrowLight,
+.categoryCard a { color: #fff; }
+.categoryCard p:not(.eyebrowLight) { color: #e7efff; }
+
+/* Final CTA: warm institutional landing after the dark category */
+.finalCta {
+  border-top: 1px solid #ded7ca;
+}
+.finalGrid h2 { color: #07182d; }
+
+@media (max-width: 980px) {
+  .journeyCard::before { display: none; }
+  .journeyCard { padding: 58px 44px; }
+}
+
+@media (max-width: 680px) {
+  .hero { background: #f4f1ea; }
+  .heroSystem { padding: 14px; }
+  .systemStep { min-height: 72px; }
+  .decisionItemLight { min-height: 175px; }
+  .capability { min-height: 0; }
+  .journey { padding: 72px 0 90px; }
+  .journeyCard { padding: 38px 22px; border-radius: 20px; }
+  .journeyTrack { padding-top: 20px; }
+  .journeyStep { min-height: 128px; }
+  .libraryPanel { padding: 30px 24px; }
+  .libraryPanel dl > div { grid-template-columns: 1fr; }
+  .audienceCard { min-height: 320px; }
+}
