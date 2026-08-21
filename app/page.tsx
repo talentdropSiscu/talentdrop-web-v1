@@ -4,28 +4,18 @@ import styles from "./home.module.css";
 const capabilities = [
   {
     number: "01",
-    title: "Diagnostic Engine",
-    text: "Entiende cómo funciona realmente la organización, contrasta su situación con protocolos operativos y convierte el diagnóstico en prioridades accionables.",
+    title: "Diagnostic Intelligence",
+    text: "Entendemos cómo funciona la organización y dónde existen brechas que afectan a sus procesos y decisiones.",
   },
   {
     number: "02",
-    title: "System Capture + Voice to Record",
-    text: "Conecta información procedente de sistemas y documentos, y transforma conocimiento humano en registros estructurados, contextualizados y trazables.",
+    title: "Data & Knowledge Infrastructure",
+    text: "Convertimos información fragmentada en conocimiento organizado, confiable y trazable.",
   },
   {
     number: "03",
-    title: "Data & Knowledge Infrastructure",
-    text: "Relaciona información, evidencias, personas y contexto para que cada área pueda trabajar sobre una realidad común.",
-  },
-  {
-    number: "04",
-    title: "Protocol Library + Data Trust",
-    text: "Define qué información necesita cada proceso, quién debe aportarla y con qué origen, permisos, actualización y trazabilidad.",
-  },
-  {
-    number: "05",
     title: "Decision Infrastructure",
-    text: "Hace visible qué está disponible, qué falta y quién debe actuar antes de que una decisión deportiva llegue a la mesa.",
+    text: "Preparamos el contexto necesario para que cada decisión pueda tomarse con mayor coordinación y confianza.",
   },
 ];
 
@@ -89,13 +79,13 @@ export default function Home() {
 
           <nav className={styles.nav} aria-label="Navegación principal">
             <a href="#infraestructura">Infraestructura</a>
-            <a href="#diagnostico">Diagnostic Engine</a>
+            <a href="https://wa.me/34690210722?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20mejor%20TalentDrop%20y%20solicitar%20informaci%C3%B3n%20sobre%20el%20diagn%C3%B3stico%20de%20infraestructura%20deportiva." target="_blank" rel="noopener noreferrer">Diagnostic Engine</a>
             <a href="#ecosistema">Ecosistema</a>
             <a href="#knowledge">Knowledge</a>
-            <a href="#contacto">Contacto</a>
+            <a href="https://wa.me/34690210722?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20mejor%20TalentDrop%20y%20solicitar%20informaci%C3%B3n%20sobre%20el%20diagn%C3%B3stico%20de%20infraestructura%20deportiva." target="_blank" rel="noopener noreferrer">Contacto</a>
           </nav>
 
-          <a href="#contacto" className={styles.headerCta}>
+          <a href="https://wa.me/34690210722?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20mejor%20TalentDrop%20y%20solicitar%20informaci%C3%B3n%20sobre%20el%20diagn%C3%B3stico%20de%20infraestructura%20deportiva." target="_blank" rel="noopener noreferrer" className={styles.headerCta}>
             Solicitar diagnóstico
           </a>
         </div>
@@ -118,7 +108,7 @@ export default function Home() {
                 para que puedan trabajar y decidir sobre una realidad común.
               </p>
               <div className={styles.heroActions}>
-                <a href="#diagnostico" className={styles.primaryButton}>
+                <a href="https://wa.me/34690210722?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20mejor%20TalentDrop%20y%20solicitar%20informaci%C3%B3n%20sobre%20el%20diagn%C3%B3stico%20de%20infraestructura%20deportiva." target="_blank" rel="noopener noreferrer" className={styles.primaryButton}>
                   Solicitar diagnóstico
                   <span aria-hidden="true">↘</span>
                 </a>
@@ -143,7 +133,7 @@ export default function Home() {
               <div className={styles.systemFlow}>
                 {[
                   ["01", "Información", "Existe en sistemas, documentos y personas"],
-                  ["02", "Protocolos", "Definen qué debe existir y quién interviene"],
+                  ["02", "Contrastar", "Definen qué debe existir y quién interviene"],
                   ["03", "Data Trust", "Valida origen, contexto, permisos y trazabilidad"],
                   ["04", "Coordinación", "Activa responsables, evidencias y validaciones"],
                   ["05", "Decisión", "Llega cuando la infraestructura está preparada"],
@@ -217,7 +207,7 @@ export default function Home() {
           <div className={styles.splitHeading}>
             <div>
               <p className={styles.eyebrow}>Core OS</p>
-              <h2>La capa que conecta fuentes, personas, protocolos y decisiones.</h2>
+              <h2>La infraestructura que conecta conocimiento y decisiones.</h2>
             </div>
             <p>
               No sustituimos el software de la organización. Lo conectamos
@@ -234,6 +224,9 @@ export default function Home() {
               </article>
             ))}
           </div>
+          <p className={styles.coreOsNote}>
+            La tecnología, metodología y arquitectura que conectan estas capacidades forman parte del Core OS de TalentDrop.
+          </p>
         </div>
       </section>
 
@@ -241,15 +234,15 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.journeyCard}>
             <p className={styles.eyebrow}>Diagnostic Engine</p>
-            <h2>Antes de implantar, entendemos cómo funciona realmente la organización.</h2>
+            <h2>Antes de avanzar, entendemos cómo está preparada realmente la organización.</h2>
             <div className={styles.journeyTrack}>
               {[
-                "Diagnóstico breve",
-                "Áreas",
-                "Protocolos",
-                "Criterios",
-                "Prioridades accionables",
-                "Infraestructura propuesta",
+                "Comprender",
+                "Observar",
+                "Contrastar",
+                "Priorizar",
+                "Preparar",
+                "Evolucionar",
               ].map((item, index) => (
                 <div className={styles.journeyStep} key={item}>
                   <span>{String(index + 1).padStart(2, "0")}</span>
@@ -369,7 +362,7 @@ export default function Home() {
               <article className={styles.knowledgeCard} key={item}>
                 <span>Idea {String(index + 1).padStart(2, "0")}</span>
                 <h3>{item}</h3>
-                <a href="#contacto">Explorar ↗</a>
+                <a href="https://wa.me/34690210722?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20mejor%20TalentDrop%20y%20solicitar%20informaci%C3%B3n%20sobre%20el%20diagn%C3%B3stico%20de%20infraestructura%20deportiva." target="_blank" rel="noopener noreferrer">Explorar ↗</a>
               </article>
             ))}
           </div>
@@ -387,7 +380,7 @@ export default function Home() {
               evidencias, protocolos, responsabilidades y conocimiento
               alrededor de los procesos y decisiones deportivas.
             </p>
-            <a href="#contacto">Conocer la categoría →</a>
+            <a href="https://wa.me/34690210722?text=Hola%2C%20me%20gustar%C3%ADa%20conocer%20mejor%20TalentDrop%20y%20solicitar%20informaci%C3%B3n%20sobre%20el%20diagn%C3%B3stico%20de%20infraestructura%20deportiva." target="_blank" rel="noopener noreferrer">Conocer la categoría →</a>
           </div>
         </div>
       </section>
@@ -405,7 +398,7 @@ export default function Home() {
               </p>
               <a
                 className={styles.primaryButton}
-                href="mailto:contacto@talentdrop.es?subject=Solicitar%20diagn%C3%B3stico%20TalentDrop"
+                href="mailto:contacto@talentdrop.es"
               >
                 Solicitar diagnóstico
                 <span aria-hidden="true">↗</span>
@@ -431,7 +424,7 @@ export default function Home() {
               <Link href="/deportistas">Deportistas</Link>
               <Link href="/clubes">Clubes</Link>
               <Link href="/federaciones">Federaciones</Link>
-              <a href="mailto:contacto@talentdrop.es">Contacto</a>
+              <a href="mailto:contacto@talentdrop.es">contacto@talentdrop.es</a>
             </div>
           </div>
         </div>

@@ -1729,3 +1729,16 @@
   .libraryPanel dl > div { grid-template-columns: 1fr; }
   .audienceCard { min-height: 320px; }
 }
+
+
+/* Competitive-safe public architecture note */
+.coreOsNote {
+  max-width: 760px;
+  margin: 34px 0 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(7,24,45,.18);
+  color: #40566d;
+  font-size: 14px;
+  line-height: 1.65;
+  font-weight: 650;
+}
