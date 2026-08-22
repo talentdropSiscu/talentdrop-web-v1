@@ -114,7 +114,7 @@ export default function Home() {
             <div className={styles.challengeContent}>
               <p className={styles.eyebrow}>Lo que está cambiando</p>
               <h2>Los clubes están creando nuevos perfiles para gestionar la complejidad del dato.</h2>
-              <p className={styles.challengeLead}>Football Intelligence, Recruitment Analysis, Data & Insights, Performance Intelligence, Football Operations. Los nombres cambian. La necesidad de fondo es la misma.</p>
+              <p className={styles.challengeLead}>Los nombres cambian. La necesidad de fondo es la misma: convertir información distribuida en contexto útil para operar y decidir.</p>
               <div className={styles.challengeList}>
                 <div><span>01</span><div><strong>Encontrar y estructurar</strong><p>Transformar información dispersa en conocimiento que pueda utilizarse.</p></div></div>
                 <div><span>02</span><div><strong>Conectar y contextualizar</strong><p>Relacionar lo que aporta cada área alrededor de un jugador, proceso o decisión.</p></div></div>
@@ -146,7 +146,7 @@ export default function Home() {
             <div>
               <p className={styles.eyebrow}>Lo que hoy busca el fútbol</p>
               <h2>Personas capaces de convertir información en contexto para el club.</h2>
-              <p className={styles.libraryLead}>Las nuevas posiciones que aparecen alrededor del dato deportivo no sustituyen al director deportivo, al scout, al médico o al analista. Les ayudan a trabajar sobre una base mejor organizada.</p>
+              <p className={styles.libraryLead}>Los nuevos perfiles alrededor del dato no sustituyen el criterio deportivo. Ayudan a que los profesionales trabajen sobre una base mejor organizada.</p>
               <div className={styles.areaCloud}>{processAreas.map(area => <span key={area}>{area}</span>)}</div>
             </div>
             <div className={styles.libraryPanel}>
@@ -198,7 +198,7 @@ export default function Home() {
               <div className={styles.passportMetrics}>
                 <div className={styles.passportMetric}><span>Evaluaciones</span><strong>Contexto</strong><small>Lo que observa y registra el club</small></div>
                 <div className={styles.passportMetric}><span>Evidencias</span><strong className={styles.available}>Continuidad</strong><small>Información relevante disponible cuando se necesita</small></div>
-                <div className={styles.passportMetric}><span>Evolución</span><strong>Historia</strong><small>El conocimiento se acumula entre etapas</small></div>
+                <div className={styles.passportMetric}><span>Evolución</span><strong>Historia</strong><small>El conocimiento mantiene continuidad entre etapas</small></div>
                 <div className={styles.passportMetric}><span>Decisiones</span><strong>Preparación</strong><small>El contexto no empieza de cero</small></div>
               </div>
             </div>
@@ -210,9 +210,28 @@ export default function Home() {
       <section className={styles.audiences}>
         <div className={styles.container}>
           <div className={styles.sectionIntro}><p className={styles.eyebrow}>Cuando llega el momento de decidir</p><h2>El club debería llegar con el contexto preparado.</h2></div>
-          <div className={styles.ecosystemVisual}><img src="/img/athlete-journey.jpg" alt="Profesionales y deportistas compartiendo contexto en un entorno deportivo"/><div><span>El valor aparece en el momento de actuar</span><strong>No se trata de decidir por el club. Se trata de que el club no tenga que empezar buscando información.</strong></div></div>
-          <div className={styles.audienceGrid}>
-            {moments.map(([title,text]) => <article className={styles.audienceCard} key={title}><p className={styles.cardEyebrow}>Momento de decisión</p><h3>{title}</h3><p>{text}</p></article>)}
+          <div className={styles.decisionHero}>
+            <img src="/img/athlete-journey.jpg" alt="Profesionales de un club preparando una decisión deportiva" />
+            <div className={styles.decisionHeroShade} />
+            <div className={styles.decisionHeroCopy}>
+              <span>El valor aparece cuando hay que actuar</span>
+              <strong>La decisión no debería empezar buscando información.</strong>
+              <p>El contexto necesario debería estar preparado antes de que llegue el momento de decidir.</p>
+            </div>
+          </div>
+          <div className={styles.decisionFlow}>
+            {moments.map(([title,text], index) => (
+              <article className={styles.decisionMoment} key={title}>
+                <span>{String(index + 1).padStart(2,"0")}</span>
+                <h3>{title}</h3>
+                <p>{text}</p>
+              </article>
+            ))}
+          </div>
+          <div className={styles.decisionClosing}>
+            <span>Información disponible</span><i aria-hidden="true">→</i>
+            <span>Contexto compartido</span><i aria-hidden="true">→</i>
+            <strong>Decisión preparada</strong>
           </div>
         </div>
       </section>
@@ -232,7 +251,7 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.finalGrid}>
             <p className={styles.eyebrow}>Siguiente paso</p>
-            <div><h2>El primer paso es entender dónde está hoy el club.</h2><p>En un diagnóstico breve identificamos cómo circula la información, dónde aparecen dependencias o fricciones y qué convendría ordenar primero. <strong>Sin cambiar las herramientas del club. Sin empezar por una implantación tecnológica.</strong></p><a className={styles.primaryButton} href="mailto:contacto@talentdrop.es?subject=Solicitar%20diagn%C3%B3stico%20TalentDrop">Solicitar diagnóstico <span aria-hidden="true">↗</span></a></div>
+            <div><h2>El primer paso es entender cómo está preparado hoy el club.</h2><p>En un diagnóstico breve identificamos cómo circula la información, dónde aparecen dependencias o fricciones y qué convendría ordenar primero. <strong>Sin cambiar las herramientas actuales. Sin empezar por una implantación tecnológica.</strong></p><a className={styles.primaryButton} href="mailto:contacto@talentdrop.es?subject=Solicitar%20diagn%C3%B3stico%20TalentDrop">Solicitar diagnóstico <span aria-hidden="true">↗</span></a></div>
           </div>
         </div>
       </section>
