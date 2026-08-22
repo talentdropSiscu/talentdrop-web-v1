@@ -29,7 +29,6 @@ const roles = [
   ["Recruitment & Scouting", "Ordenar seguimiento, evaluaciones y evidencias para comparar mejor."],
   ["Performance & Medical", "Hacer disponible el contexto autorizado cuando un proceso lo necesita."],
   ["Football Operations", "Coordinar responsables, procesos, documentación y seguimiento."],
-  ["Sporting Management", "Trabajar con una visión común antes de priorizar, validar o decidir."],
 ];
 
 const moments = [
@@ -75,7 +74,7 @@ export default function Home() {
               <p className={styles.kicker}>La nueva era del dato en el deporte</p>
               <h1>Los clubes no necesitan más información. Necesitan estar preparados para utilizarla.</h1>
               <p className={styles.heroLead}>
-                El fútbol está incorporando nuevos perfiles para <strong>ordenar información, conectar áreas y preparar mejor las decisiones</strong>. TalentDrop nace para responder a esa misma necesidad desde una infraestructura común.
+                El fútbol está incorporando nuevos perfiles para <strong>ordenar información, conectar áreas y preparar mejor las decisiones</strong>. TalentDrop ayuda a convertir esa necesidad en una capacidad permanente del club.
               </p>
               <div className={styles.heroActions}>
                 <a href={whatsapp} target="_blank" rel="noopener noreferrer" className={styles.primaryButton}>Solicitar diagnóstico <span aria-hidden="true">↘</span></a>
@@ -121,7 +120,7 @@ export default function Home() {
                 <div><span>02</span><div><strong>Conectar y contextualizar</strong><p>Relacionar lo que aporta cada área alrededor de un jugador, proceso o decisión.</p></div></div>
                 <div><span>03</span><div><strong>Preparar y comunicar</strong><p>Hacer visible lo relevante, lo pendiente y el contexto antes de actuar.</p></div></div>
               </div>
-              <p className={styles.emphasis}>Los grandes clubes pueden crear equipos especializados. El resto también necesita esa capacidad.</p>
+              <p className={styles.emphasis}>Los clubes más avanzados están construyendo esta capacidad con especialistas, procesos y tecnología propia. TalentDrop permite desplegarla de forma proporcional a cada club.</p>
             </div>
           </div>
         </div>
@@ -187,14 +186,20 @@ export default function Home() {
                 <div><span>04</span><div><strong>Resultado</strong><p>Una visión más continua del jugador para quienes tienen que trabajar con ella.</p></div></div>
               </div>
             </div>
-            <div className={styles.passportMockup} aria-label="Ejemplo conceptual de continuidad del conocimiento del jugador">
-              <div className={styles.passportHeader}><div className={styles.passportAvatar}>AM</div><div><span className={styles.passportLabel}>Jugador · contexto compartido</span><h3>Álvaro Martínez López</h3><p>Trayectoria de información dentro del club</p></div><span className={styles.passportStatus}>ACTIVO</span></div>
-              <div className={styles.passportTabs}><span className={styles.activeTab}>Contexto</span><span>Seguimiento</span><span>Evidencias</span><span>Historial</span></div>
+            <div className={styles.passportMockup} aria-label="Continuidad del conocimiento alrededor del jugador">
+              <div className={styles.passportHeader}>
+                <div className={styles.passportAvatar}>01</div>
+                <div>
+                  <span className={styles.passportLabel}>Jugador</span>
+                  <h3>Conocimiento continuo</h3>
+                  <p>La información crece con cada interacción del club</p>
+                </div>
+              </div>
               <div className={styles.passportMetrics}>
-                <div className={styles.passportMetric}><span>Scouting</span><strong>Contexto</strong><small>Evaluaciones y observaciones conectadas</small></div>
-                <div className={styles.passportMetric}><span>Performance</span><strong className={styles.available}>Evolución</strong><small>Información disponible para usuarios autorizados</small></div>
-                <div className={styles.passportMetric}><span>Procesos</span><strong>Continuidad</strong><small>El conocimiento acompaña cada nueva etapa</small></div>
-                <div className={styles.passportMetric}><span>Decisiones</span><strong>Contexto</strong><small>La historia no empieza de nuevo</small></div>
+                <div className={styles.passportMetric}><span>Evaluaciones</span><strong>Contexto</strong><small>Lo que observa y registra el club</small></div>
+                <div className={styles.passportMetric}><span>Evidencias</span><strong className={styles.available}>Continuidad</strong><small>Información relevante disponible cuando se necesita</small></div>
+                <div className={styles.passportMetric}><span>Evolución</span><strong>Historia</strong><small>El conocimiento se acumula entre etapas</small></div>
+                <div className={styles.passportMetric}><span>Decisiones</span><strong>Preparación</strong><small>El contexto no empieza de cero</small></div>
               </div>
             </div>
           </div>
@@ -227,7 +232,7 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.finalGrid}>
             <p className={styles.eyebrow}>Siguiente paso</p>
-            <div><h2>Empecemos entendiendo cómo circula hoy la información en vuestro club.</h2><p>El diagnóstico permite identificar dónde existen fragmentación, dependencias o fricciones y qué convendría ordenar primero. Sin cambiar las herramientas del club y sin empezar por una implantación tecnológica.</p><a className={styles.primaryButton} href="mailto:contacto@talentdrop.es?subject=Solicitar%20diagn%C3%B3stico%20TalentDrop">Solicitar diagnóstico <span aria-hidden="true">↗</span></a></div>
+            <div><h2>El primer paso es entender dónde está hoy el club.</h2><p>En un diagnóstico breve identificamos cómo circula la información, dónde aparecen dependencias o fricciones y qué convendría ordenar primero. <strong>Sin cambiar las herramientas del club. Sin empezar por una implantación tecnológica.</strong></p><a className={styles.primaryButton} href="mailto:contacto@talentdrop.es?subject=Solicitar%20diagn%C3%B3stico%20TalentDrop">Solicitar diagnóstico <span aria-hidden="true">↗</span></a></div>
           </div>
         </div>
       </section>
