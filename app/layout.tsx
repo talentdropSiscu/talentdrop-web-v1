@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./v22.css";
 import { Inter, Space_Grotesk } from "next/font/google";
 
 const inter = Inter({
@@ -17,7 +18,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "TalentDrop | Sports Decision Infrastructure",
   description:
-    "TalentDrop conecta información, evidencias, protocolos, responsabilidades y conocimiento para que organizaciones deportivas estén preparadas para decidir.",
+    "TalentDrop ayuda a clubes y federaciones a organizar información, evidencia, protocolos y personas alrededor de sus decisiones deportivas.",
   openGraph: {
     title: "TalentDrop | Sports Decision Infrastructure",
     description:
@@ -35,11 +36,7 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="es">
       <body className={`${inter.variable} ${spaceGrotesk.variable}`}>{children}</body>
