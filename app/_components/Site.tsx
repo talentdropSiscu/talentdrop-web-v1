@@ -1,6 +1,7 @@
 import Link from "next/link";
 
-export const CONTACT_EMAIL = "contacto@talentdrop.es";
+export const CONTACT_EMAIL = "clubs@talentdrop.es";
+export const GENERAL_EMAIL = "contacto@talentdrop.es";
 
 export function PageShell({ children }: { children: React.ReactNode }) {
   return (
@@ -19,12 +20,12 @@ export function Header() {
         <span className="brand-mark">T</span>
         <span className="brand-name"><strong>Talent</strong>Drop</span>
       </Link>
-      <nav className="nav">
-        <Link href="/core-os">Core OS</Link>
-        <Link href="/deportistas">Deportistas</Link>
+      <nav className="nav" aria-label="Navegación principal">
+        <Link href="/">Qué hacemos</Link>
         <Link href="/clubes">Clubes</Link>
         <Link href="/federaciones">Federaciones</Link>
-        <a href={`mailto:${CONTACT_EMAIL}`} className="nav-cta">Contacto</a>
+        <Link href="/deportistas">Deportistas</Link>
+        <Link href="/#contacto" className="nav-cta">Contacto</Link>
       </nav>
     </header>
   );
@@ -39,14 +40,14 @@ export function Footer() {
             <span className="brand-mark">T</span>
             <span className="brand-name"><strong>Talent</strong>Drop</span>
           </div>
-          <p>Infraestructura deportiva para tomar decisiones con más evidencia.</p>
+          <p>Sports Decision Infrastructure · Data · Evidence · Decisions</p>
         </div>
         <div className="footer-links">
-          <Link href="/core-os">Core OS</Link>
-          <Link href="/deportistas">Deportistas</Link>
           <Link href="/clubes">Clubes</Link>
           <Link href="/federaciones">Federaciones</Link>
+          <Link href="/deportistas">Deportistas</Link>
           <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+          <a href={`mailto:${GENERAL_EMAIL}`}>{GENERAL_EMAIL}</a>
         </div>
       </div>
       <p className="legal">© 2026 TalentDrop. TalentDrop no garantiza fichajes, oportunidades deportivas, rendimiento futuro ni diagnóstico médico. Su finalidad es estructurar información, documentar evidencia y reducir incertidumbre en procesos de decisión deportiva.</p>
@@ -69,11 +70,11 @@ export function Hero({ eyebrow, title, text, image, children }: { eyebrow: strin
   );
 }
 
-export function ButtonRow({ primary = "Solicitar demo", secondary = "Ver Core OS" }: { primary?: string; secondary?: string }) {
+export function ButtonRow({ primary = "Hablemos", secondary = "Ver clubes" }: { primary?: string; secondary?: string }) {
   return (
     <div className="button-row">
-      <a className="btn primary" href={`mailto:${CONTACT_EMAIL}`}>{primary}</a>
-      <Link className="btn secondary" href="/core-os">{secondary}</Link>
+      <a className="btn primary" href={`mailto:${CONTACT_EMAIL}?subject=TalentDrop%20%7C%20Primera%20conversaci%C3%B3n`}>{primary}</a>
+      <Link className="btn secondary" href="/clubes">{secondary}</Link>
     </div>
   );
 }
@@ -189,12 +190,14 @@ export function CoreLayers() {
   );
 }
 
-export function CTA() {
+export function CTA({ subject = "TalentDrop | Primera conversación" }: { subject?: string }) {
+  const encodedSubject = encodeURIComponent(subject);
   return (
     <section className="cta">
       <p className="eyebrow">TalentDrop</p>
-      <h2>Hablemos de decisiones deportivas con más evidencia.</h2>
-      <a className="btn primary" href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
+      <h2>Empecemos por una decisión real.</h2>
+      <p>Cuéntanos qué decisión necesita preparar mejor tu organización y veremos si TalentDrop puede aportar una infraestructura útil.</p>
+      <a className="btn primary" href={`mailto:${CONTACT_EMAIL}?subject=${encodedSubject}`}>Hablemos →</a>
     </section>
   );
 }
