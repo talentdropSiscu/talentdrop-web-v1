@@ -158,6 +158,29 @@ export default function Home() {
         </div>
       </section>
 
+      <section aria-labelledby="brand-film-title" style={{ padding: "120px 0", background: "#07111f", color: "#fff" }}>
+        <div className={styles.container}>
+          <div style={{ maxWidth: 760, marginBottom: 42 }}>
+            <p style={{ margin: "0 0 18px", color: "#8eb5ff", fontSize: 11, fontWeight: 800, letterSpacing: ".15em", textTransform: "uppercase" }}>TalentDrop · Sports Decision Infrastructure</p>
+            <h2 id="brand-film-title" style={{ margin: 0, fontFamily: "var(--td-display)", fontSize: "clamp(38px,4.2vw,60px)", lineHeight: 1.03, letterSpacing: "-.052em", fontWeight: 650 }}>Así funciona una Sports Decision Infrastructure.</h2>
+            <p style={{ margin: "22px 0 0", color: "#b8c8d8", fontSize: 16, lineHeight: 1.75 }}>Información, evidencia, protocolos y personas conectados alrededor de una decisión deportiva.</p>
+          </div>
+          <div style={{ overflow: "hidden", borderRadius: 16, border: "1px solid rgba(255,255,255,.12)", background: "#0b0f17", boxShadow: "0 30px 80px rgba(0,0,0,.32)" }}>
+            <video
+              controls
+              playsInline
+              preload="metadata"
+              aria-label="TalentDrop — Decision Infrastructure for Sports"
+              style={{ width: "100%", height: "auto", display: "block", aspectRatio: "16 / 9", objectFit: "cover" }}
+            >
+              <source src="/video/talentdrop-decision-infrastructure-web%20(1).mp4" type="video/mp4" />
+              Tu navegador no soporta la reproducción de vídeo.
+            </video>
+          </div>
+          <p style={{ margin: "24px 0 0", color: "#d7e1ec", fontSize: 15, lineHeight: 1.65 }}><strong style={{ color: "#fff" }}>TalentDrop no sustituye las herramientas del club.</strong> Las conecta alrededor de las decisiones deportivas.</p>
+        </div>
+      </section>
+
       <section className={styles.journey} id="diagnostico">
         <div className={styles.container}>
           <div className={styles.journeyCard}>
@@ -251,7 +274,7 @@ export default function Home() {
         <div className={styles.container}>
           <div className={styles.finalGrid}>
             <p className={styles.eyebrow}>Siguiente paso</p>
-            <div><h2>El primer paso es entender cómo está preparado hoy el club.</h2><p>En un diagnóstico breve identificamos cómo circula la información, dónde aparecen dependencias o fricciones y qué convendría ordenar primero. <strong>Sin cambiar las herramientas actuales. Sin empezar por una implantación tecnológica.</strong></p><a className={styles.primaryButton} href="mailto:contacto@talentdrop.es?subject=Solicitar%20diagn%C3%B3stico%20TalentDrop">Solicitar diagnóstico <span aria-hidden="true">↗</span></a></div>
+            <div><h2>El primer paso es entender cómo está preparado hoy el club.</h2><p>En un diagnóstico breve identificamos cómo circula la información, dónde aparecen dependencias o fricciones y qué convendría ordenar primero. <strong>Sin cambiar las herramientas actuales. Sin empezar por una implantación tecnológica.</strong></p><a className={styles.primaryButton} href="mailto:clubs@talentdrop.es?subject=TalentDrop%20%7C%20Primera%20conversaci%C3%B3n">Solicitar diagnóstico <span aria-hidden="true">↗</span></a></div>
           </div>
         </div>
       </section>
@@ -259,7 +282,7 @@ export default function Home() {
       <footer className={styles.footer}>
         <div className={styles.container}>
           <div className={styles.footerTop}><Link href="/" className={styles.brand}><span className={styles.brandMark}>T</span><span>TalentDrop</span></Link><p>Infraestructura para las decisiones deportivas</p></div>
-          <div className={styles.footerBottom}><span>© 2026 TalentDrop</span><div><Link href="/deportistas">Deportistas</Link><Link href="/clubes">Clubes</Link><Link href="/federaciones">Federaciones</Link><a href="mailto:contacto@talentdrop.es">contacto@talentdrop.es</a></div></div>
+          <div className={styles.footerBottom}><span>© 2026 TalentDrop</span><div><Link href="/deportistas">Deportistas</Link><Link href="/clubes">Clubes</Link><Link href="/federaciones">Federaciones</Link><a href="mailto:clubs@talentdrop.es">clubs@talentdrop.es</a></div></div>
         </div>
       </footer>
     </main>
