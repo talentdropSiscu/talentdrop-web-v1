@@ -40,23 +40,32 @@ async function handle(req: NextRequest, { params }: Params): Promise<NextRespons
   if (!allowed.test(pathname) || path.some(x => x === ".." || x.includes("\\"))) {
     return new NextResponse("Ruta no admitida", { status: 404 });
   }
-  const target = new URL(pathname + req.nextUrl.search, upstream);
+  // Astro publica las páginas como directorios y exige barra final.
+  // Resolverla en el origen evita el bucle de redirecciones con Next.js.
+  const isAsset = /\\.[a-z0-9]{2,8}$/i.test(pathname);
+  const canonicalPath = !isAsset && !pathname.endsWith("/") ? pathname + "/" : pathname;
+  let target = new URL(canonicalPath + req.nextUrl.search, upstream);
   try {
-    const r = await fetch(target, {
-      method: req.method,
-      redirect: "manual",
-      cache: "no-store",
-      headers: { accept: req.headers.get("accept") || "*/*" },
-      signal: AbortSignal.timeout(12000),
-    });
-    if (r.status >= 300 && r.status < 400) {
+    let r: Response | undefined;
+    // Seguir únicamente redirecciones internas del origen, nunca reenviar
+    // al visitante un 308 que pueda entrar en conflicto con Next.js.
+    for (let hop = 0; hop < 5; hop++) {
+      r = await fetch(target, {
+        method: req.method,
+        redirect: "manual",
+        cache: "no-store",
+        headers: { accept: req.headers.get("accept") || "*/*" },
+        signal: AbortSignal.timeout(12000),
+      });
+      if (r.status < 300 || r.status >= 400) break;
       const location = r.headers.get("location");
-      if (location) {
-        const dest = new URL(location, target);
-        if (dest.origin !== upstream) return new NextResponse("Redirección externa no admitida", { status: 502 });
-        return NextResponse.redirect(new URL(prefix + dest.pathname + dest.search, req.url), r.status);
-      }
+      if (!location) break;
+      const dest = new URL(location, target);
+      if (dest.origin !== upstream) return new NextResponse("Redirección externa no admitida", { status: 502 });
+      if (dest.href === target.href) return new NextResponse("Bucle de redirección en origen", { status: 502 });
+      target = dest;
     }
+    if (!r || (r.status >= 300 && r.status < 400)) return new NextResponse("Redirección de origen no resuelta", { status: 502 });
     const type = r.headers.get("content-type") || "application/octet-stream";
     const headers = new Headers({ "content-type": type, "cache-control": "no-store", "x-content-type-options": "nosniff" });
     if (req.method === "HEAD") return new NextResponse(null, { status: r.status, headers });
